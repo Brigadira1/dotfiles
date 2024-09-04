@@ -1,2 +1,5 @@
 .stow-local-ignore
 tmux/.config/tmux/plugins
+scripts/log.out
+scripts/log.err
+
