@@ -34,6 +34,7 @@ IGNORE_LIST=(
     X11
     xorgxrdp
     ubuntu
+    tmux/.config/tmux/plugins
 )
 
 # Function to backup a file or directory
