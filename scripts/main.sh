@@ -8,7 +8,10 @@ exec 2> >(tee -a log.err >&2)
 
 ARCH_PACKAGES_SCRIPT=add_arch_packages.sh
 CUSTOM_CONF_SCRIPT=custom_apps_config.sh
+<<<<<<< HEAD
 # STOW_SCRIPT=stow-dotfiles-script.sh
+=======
+>>>>>>> 98e55ea (run.sh added to the scripts folder)
 STOW_SCRIPT=run.sh
 NVIDIA_MADNESS=nvidia_madness.sh
 CURRENT_DIR=$(pwd)
