@@ -1,85 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Configuring ./config directory ...."
-
-CURRENT_DIR=$HOME/dotfiles/scripts/
-CURRENT_CONFIG_DIR=$HOME/.config
-CONFIG_DIR_APPS="alacritty nvim rofi picom qtile starship wallpapers bat btop ncdu nitrogen gtk-3.0 gtk-4.0 qt5ct tmux"
-IS_BACKUP_TAKEN=false
-
-configure_apps_dir() {
-
-    handle_app_configs backup
-    handle_app_configs delete
-    handle_app_configs copy
-
-}
-
-backup_app_config() {
-
-    local app_folder=$1
-
-    if [ ! -d $CURRENT_CONFIG_DIR/backup ]; then
-        echo "Backup directory doesn't exist ..."
-        echo "Creating backup directory in $CURRENT_CONFIG_DIR/backup ..."
-        mkdir -p "$CURRENT_CONFIG_DIR/backup"
-        echo 
-    fi
-
-    if [[ -d $CURRENT_CONFIG_DIR/$app_folder && $IS_BACKUP_TAKEN == "false" ]]; then
-        echo "Backing up $CURRENT_CONFIG_DIR/$app_folder ..."
-        cp -rf "$CURRENT_CONFIG_DIR/$app_folder" "$CURRENT_CONFIG_DIR/backup"
-        echo 
-    fi
-
-}
-
-delete_old_config() {
-
-    local app_folder=$1
-    backup_app_config $app_folder
-
-    if [ -d $CURRENT_CONFIG_DIR/$app_folder ]; then
-        echo "Deleting $CURRENT_CONFIG_DIR/$app_folder ..."
-        rm -rf $CURRENT_CONFIG_DIR/$app_folder
-        echo 
-    fi
-
-}
-
-copy_new_config() {
-
-    local app_folder=$1
-
-    delete_old_config app_folder
-    (
-        cd ..
-        echo "Copying from $(pwd)/$app_folder to $CURRENT_CONFIG_DIR"
-        cp -rf "./$app_folder" "$CURRENT_CONFIG_DIR"
-        echo 
-    )
-
-}
-
-handle_app_configs() {
-
-    local action="$1"
-    for app in $CONFIG_DIR_APPS; do
-        if [[ $action == "backup" ]]; then
-            backup_app_config $app
-        elif [[ $action == "delete" ]]; then
-            delete_old_config $app
-        elif [[ $action == "copy" ]]; then
-            copy_new_config $app
-        else
-            echo "The only possible actions are: backup, delete or copy"
-            echo "You've specified invalid action: $action "
-            echo 
-        fi
-    done
-    IS_BACKUP_TAKEN=true
-}
-
 handle_qt5ct_env() {
 
     local xsession_folder="/etc/X11/Xsession.d"
@@ -108,23 +28,6 @@ handle_qt5ct_env() {
         echo "'export QT_QPA_PLATFORMTHEME=qt5ct' is already setup.Nothing to do..."
         echo 
     fi
-
-}
-
-handle_gtk_2() {
-
-    local gtkrc=".gtkrc-2.0"
-    if [ -f "$HOME/$gtkrc" ]; then
-        echo "'$HOME/$gtkrc' exists. Taking a backup..."
-        mkdir -p "$CURRENT_CONFIG_DIR/backup"
-        cp "$HOME/$gtkrc" "$CURRENT_CONFIG_DIR/backup"
-    fi
-    (
-        cd ..
-        echo "Copying '$(pwd)/$gtkrc' to '$HOME/$gtkrc'"
-        cp "$(pwd)/$gtkrc" "$HOME/$gtkrc"
-        echo 
-    )
 
 }
 
@@ -207,11 +110,8 @@ install_tmux_plugin_manager() {
 
 }
 
-configure_apps_dir
-#Dirty quick hack. One needs to invoke bat in order to refresh its theme
 handle_bat_theme
 handle_qt5ct_env
-handle_gtk_2
 handle_lightdm_greeters
 install_tmux_plugin_manager
 removing_grub_delay

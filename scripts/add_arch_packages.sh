@@ -2,6 +2,7 @@
 
 PACKAGES=""
 INSTALLER_OPTIONS=" --needed --noconfirm"
+mkdir ~/repos
 
 initialize_packages() {
 
@@ -166,7 +167,6 @@ install_hack_nerd() {
 install_fzf-git_sh() {
 
     echo "Installing fzf-git.sh in the ~/repos folder"
-    mkdir -p ~/repos/
     git clone https://github.com/junegunn/fzf-git.sh ~/repos/fzf-git.sh
 }
 

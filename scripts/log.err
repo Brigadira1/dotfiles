@@ -1,317 +1,0 @@
-warning: dependency cycle detected:
-warning: libcamera-ipa will be installed before its libcamera dependency
-warning: /etc/locale.gen installed as /etc/locale.gen.pacnew
-warning: base-devel-1-1 is up to date -- skipping
-warning: glibc-2.40+r16+gaa533d58ff-2 is up to date -- skipping
-warning: dependency cycle detected:
-warning: harfbuzz will be installed before its freetype2 dependency
-warning: libx11-1.8.10-1 is up to date -- skipping
-warning: base-devel-1-1 is up to date -- skipping
-warning: git-2.46.0-2 is up to date -- skipping
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1035  100  1035    0     0   6778      0 --:--:-- --:--:-- --:--:--  6809
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  444k  100  444k    0     0   728k      0 --:--:-- --:--:-- --:--:-- 1375k
-    yay-12.3.5.tar.gz ... Passed
-go: downloading github.com/Jguer/aur v1.2.3
-go: downloading github.com/Jguer/go-alpm/v2 v2.2.2
-go: downloading github.com/Jguer/votar v1.0.0
-go: downloading github.com/Morganamilo/go-srcinfo v1.0.0
-go: downloading github.com/deckarep/golang-set/v2 v2.6.0
-go: downloading github.com/leonelquinteros/gotext v1.5.2
-go: downloading golang.org/x/sys v0.18.0
-go: downloading github.com/Morganamilo/go-pacmanconf v0.0.0-20210502114700-cff030e927a5
-go: downloading golang.org/x/term v0.18.0
-go: downloading github.com/adrg/strutil v0.3.1
-go: downloading github.com/hashicorp/go-multierror v1.1.1
-go: downloading github.com/itchyny/gojq v0.12.14
-go: downloading github.com/mitchellh/mapstructure v1.5.0
-go: downloading github.com/ohler55/ojg v1.21.4
-go: downloading golang.org/x/text v0.14.0
-go: downloading github.com/hashicorp/errwrap v1.1.0
-go: downloading github.com/itchyny/timefmt-go v0.1.5
-rm: cannot remove '/tmp/tmp.7tTdaQb8ox/src/gopath/pkg/mod/golang.org/x/telemetry/config@v0.30.0/config.json': Permission denied
-rm: cannot remove '/tmp/tmp.7tTdaQb8ox/src/gopath/pkg/mod/golang.org/x/telemetry/config@v0.30.0/doc.go': Permission denied
-rm: cannot remove '/tmp/tmp.7tTdaQb8ox/src/gopath/pkg/mod/golang.org/x/telemetry/config@v0.30.0/go.mod': Permission denied
-rm: cannot remove '/tmp/tmp.7tTdaQb8ox/src/gopath/pkg/mod/golang.org/x/telemetry/config@v0.30.0/LICENSE': Permission denied
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 2346k  100 2346k    0     0  2603k      0 --:--:-- --:--:-- --:--:-- 2603k
-==> WARNING: Skipping verification of source file PGP signatures.
-    xrdp-0.10.1.tar.gz ... Passed
-    arch-config.diff ... Passed
-    xrdp-0.10.1.tar.gz ... Passed
-    arch-config.diff ... Passed
-autoreconf: export WARNINGS=
-autoreconf: Entering directory '.'
-autoreconf: configure.ac: not using Gettext
-autoreconf: running: aclocal --force -I m4
-autoreconf: configure.ac: tracing
-autoreconf: configure.ac: adding subdirectory libpainter to autoreconf
-autoreconf: Entering directory 'libpainter'
-autoreconf: configure.ac: not using Gettext
-autoreconf: running: aclocal --force -I m4
-autoreconf: configure.ac: tracing
-autoreconf: running: libtoolize --copy --force
-autoreconf: configure.ac: not using Intltool
-autoreconf: configure.ac: not using Gtkdoc
-autoreconf: running: aclocal --force -I m4
-autoreconf: running: /usr/bin/autoconf --force
-autoreconf: running: /usr/bin/autoheader --force
-autoreconf: running: automake --add-missing --copy --force-missing
-configure.ac:8: installing './compile'
-configure.ac:6: installing './missing'
-src/Makefile.am: installing './depcomp'
-autoreconf: Leaving directory 'libpainter'
-autoreconf: configure.ac: adding subdirectory librfxcodec to autoreconf
-autoreconf: Entering directory 'librfxcodec'
-autoreconf: configure.ac: not using Gettext
-autoreconf: running: aclocal --force -I m4
-autoreconf: configure.ac: tracing
-autoreconf: running: libtoolize --copy --force
-autoreconf: configure.ac: not using Intltool
-autoreconf: configure.ac: not using Gtkdoc
-autoreconf: running: aclocal --force -I m4
-autoreconf: running: /usr/bin/autoconf --force
-autoreconf: running: /usr/bin/autoheader --force
-autoreconf: running: automake --add-missing --copy --force-missing
-configure.ac:9: installing './compile'
-configure.ac:6: installing './missing'
-src/Makefile.am: installing './depcomp'
-autoreconf: Leaving directory 'librfxcodec'
-autoreconf: running: libtoolize --copy --force
-autoreconf: configure.ac: not using Intltool
-autoreconf: configure.ac: not using Gtkdoc
-autoreconf: running: aclocal --force -I m4
-autoreconf: running: /usr/bin/autoconf --force
-autoreconf: running: /usr/bin/autoheader --force
-autoreconf: running: automake --add-missing --copy --force-missing
-configure.ac:9: installing './compile'
-configure.ac:7: installing './missing'
-common/Makefile.am: installing './depcomp'
-autoreconf: Leaving directory '.'
-==> WARNING: Using existing $srcdir/ tree
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: relinking 'libvnc.la'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: relinking 'libxup.la'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: relinking 'libmc.la'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: relinking 'libipm.la'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: relinking 'libxrdp.la'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: remember to run 'libtool --finish /usr/lib'
-libtool: warning: remember to run 'libtool --finish /usr/lib'
-libtool: warning: relinking 'libsesman.la'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-libtool: warning: '../../sesman/libsesman/libsesman.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../sesman/libsesman/libsesman.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../sesman/libsesman/libsesman.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../sesman/libsesman/libsesman.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../../libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../sesman/libsesman/libsesman.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../libipm/libipm.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../libxrdp/libxrdp.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '/home/brigadira/.cache/yay/xrdp/src/xrdp-0.10.1/common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../third_party/tomlc99/libtoml.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: '../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-....+...+...........+.+......+++++++++++++++++++++++++++++++++++++++*........+....+..............+.+..+.........+....+.....+.+++++++++++++++++++++++++++++++++++++++*........+......+...+........+.......+...+........+..........+.....+.+......+....................+...+....+.....+.+..............+...+....+......+............+..+.........+.+.....+....+..+...+....+...+.....+...+.+.....+.........+.........+.+.................+...+.......+.....+...+.+..............+.........+......+......+.+..+.............+...+..............+.+..+...................+...+.....+...+.......+..+.........+.......+........+......+.........+....+...+........++++++
-..+..+...+++++++++++++++++++++++++++++++++++++++*...+...+.........+.+++++++++++++++++++++++++++++++++++++++*...+......+.........+...+...+..+...+....+...+...+...+..........................+....+......+...............+.....+....+...........+.+...+.....+.+....................+.+...+.........+...+..+..........+.....+.+..+...+....+...+.........+...............+........+......+....+...+........+.......+.....+..........+.................+......+.+...+........+...................+.....+...+...+...+.+..............+.+...+..+......+.............+.........+..+...+......+....+.................+..........+......+...+..+.........+...............+......+.......+...+..+......................+...+...+............+......+.....+......+.+...+..+.........+.+..+...+.........+....+.....+.........+.+......+........+..........+......+..+....+..............+.+........+.+.....+......+.+..................+.........+......+..+....+...+......+...............+.........+...+...+.....+.+...........+...+......+...+.......+.........+.....+......+...+...............+.............+.........+..............+.........+.+..+....+.....+......+...+.+...+...+.....+..........+...+......+.....+.........+.+........+...+..........+...+.....+.........+............+.+..+......+.+...+...+........+....+...+...+..+....+........+...+...+.+..................+..+.+.................+..........+........+..........+.....+.......+......+..+.......+..+....+..+.......+........+..........+...............+............+..+......+.........+................+..+.+...........+................+.....+.........+...+.............+..+...+...+.+..............+..........+..+.......+..+.+.....+.......+.....+...+...+....+...+..+...+...+......+.........++++++
------
-libtool: warning: '../common/libcommon.la' has not been installed in '/usr/lib/xrdp'
-libtool: warning: relinking 'libxrdpapi.la'
-libtool: warning: remember to run 'libtool --finish /usr/lib/xrdp'
-strip: ./usr/lib/stWPB9Dy/painter.o: plugin needed to handle lto object
-strip: ./usr/lib/steXXCUU/painter.o: plugin needed to handle lto object
-strip: ./usr/lib/stKGJuMU/rfxencode.o: plugin needed to handle lto object
-strip: ./usr/lib/stEUQYw8/rfxencode.o: plugin needed to handle lto object
-==> WARNING: Package contains reference to $srcdir
-usr/bin/xrdp-sesman
-usr/bin/xrdp
-warning: git-2.46.0-2 is up to date -- skipping
-warning: openssh-9.8p1-1 is up to date -- skipping
-warning: wget-1.24.5-3 is up to date -- skipping
-warning: curl-8.9.1-2 is up to date -- skipping
-Cloning into bare repository '/home/brigadira/.cache/yay/papirus-icon-theme-git/papirus-icon-theme'...
-==> WARNING: Skipping verification of source file PGP signatures.
-    papirus-icon-theme ... Skipped
-    papirus-icon-theme ... Skipped
-Cloning into 'papirus-icon-theme'...
-done.
-Updating files:  62% (72567/115401)Updating files:  63% (72703/115401)Updating files:  64% (73857/115401)Updating files:  65% (75011/115401)Updating files:  66% (76165/115401)Updating files:  67% (77319/115401)Updating files:  68% (78473/115401)Updating files:  69% (79627/115401)Updating files:  70% (80781/115401)Updating files:  71% (81935/115401)Updating files:  72% (83089/115401)Updating files:  73% (84243/115401)Updating files:  74% (85397/115401)Updating files:  75% (86551/115401)Updating files:  76% (87705/115401)Updating files:  77% (88859/115401)Updating files:  78% (90013/115401)Updating files:  79% (91167/115401)Updating files:  80% (92321/115401)Updating files:  81% (93475/115401)Updating files:  82% (94629/115401)Updating files:  83% (95783/115401)Updating files:  84% (96937/115401)Updating files:  85% (98091/115401)Updating files:  86% (99245/115401)Updating files:  87% (100399/115401)Updating files:  88% (101553/115401)Updating files:  89% (102707/115401)Updating files:  90% (103861/115401)Updating files:  91% (105015/115401)Updating files:  92% (106169/115401)Updating files:  93% (107323/115401)Updating files:  94% (108477/115401)Updating files:  95% (109631/115401)Updating files:  96% (110785/115401)Updating files:  97% (111939/115401)Updating files:  98% (113093/115401)Updating files:  99% (114247/115401)Updating files: 100% (115401/115401)Updating files: 100% (115401/115401), done.
-==> WARNING: Using existing $srcdir/ tree
-Cloning into bare repository '/home/brigadira/.cache/yay/shell-color-scripts-git/shell-color-scripts'...
-==> WARNING: Skipping verification of source file PGP signatures.
-    shell-color-scripts ... Skipped
-    shell-color-scripts ... Skipped
-Cloning into 'shell-color-scripts'...
-done.
-==> WARNING: Using existing $srcdir/ tree
-warning: gzip-1.13-4 is up to date -- skipping
-warning: libxft-2.3.8-2 is up to date -- skipping
-warning: harfbuzz-9.0.0-1 is up to date -- skipping
-warning: libxinerama-1.1.5-2 is up to date -- skipping
-warning: python-3.12.5-1 is up to date -- skipping
-warning: neovim-0.10.1-3 is up to date -- skipping
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
- 25  158M   25 39.9M    0     0  33.4M      0  0:00:04  0:00:01  0:00:03 33.4M 80  158M   80  127M    0     0  58.1M      0  0:00:02  0:00:02 --:--:-- 87.5M100  158M  100  158M    0     0  62.4M      0  0:00:02  0:00:02 --:--:-- 87.9M
-==> WARNING: Skipping verification of source file PGP signatures.
-    brave-bin.sh ... Passed
-    brave-browser.desktop ... Passed
-    brave-bin-1.69.162-x86_64.zip ... Passed
-    brave-bin.sh ... Passed
-    brave-browser.desktop ... Passed
-    brave-bin-1.69.162-x86_64.zip ... Passed
-==> WARNING: Using existing $srcdir/ tree
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   169  100   169    0     0    705      0 --:--:-- --:--:-- --:--:--   707
-  1 54.1M    1 1039k    0     0  1306k      0  0:00:42 --:--:--  0:00:42 1306k 89 54.1M   89 48.3M    0     0  26.9M      0  0:00:02  0:00:01  0:00:01 47.3M100 54.1M  100 54.1M    0     0  28.2M      0  0:00:01  0:00:01 --:--:-- 47.4M
-==> WARNING: Skipping verification of source file PGP signatures.
-    nomachine_8.13.1_1_x86_64.tar.gz ... Passed
-    nomachine_8.13.1_1_x86_64.tar.gz ... Passed
-==> WARNING: Using existing $srcdir/ tree
-Cloning into bare repository '/home/brigadira/.cache/yay/qtile-extras/qtile-extras'...
-==> WARNING: Skipping verification of source file PGP signatures.
-    qtile-extras ... Skipped
-gpg: directory '/home/brigadira/.gnupg' created
-gpg: /home/brigadira/.gnupg/trustdb.gpg: trustdb created
-gpg: error reading key: No public key
-gpg: key 58A9AA7C86727DF7: public key "elParaguayo <elparaguayocode@gmail.com>" imported
-gpg: Total number processed: 1
-gpg:               imported: 1
-    qtile-extras ... Skipped
-    qtile-extras git repo ... Passed
-Cloning into 'qtile-extras'...
-done.
-Switched to a new branch 'makepkg'
-==> WARNING: Using existing $srcdir/ tree
-warning: no previously-included files found matching 'coverage.xml'
-warning: no previously-included files matching '__pycache__' found under directory '*'
-warning: no previously-included files matching '*.py[co]' found under directory '*'
-warning: no previously-included files found matching 'coverage.xml'
-warning: no previously-included files matching '__pycache__' found under directory '*'
-warning: no previously-included files matching '*.py[co]' found under directory '*'
-warning: dependency cycle detected:
-warning: eglexternalplatform will be installed before its nvidia-utils dependency
-warning: nvidia-utils-560.35.03-2 is up to date -- skipping
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 30315    0 30315    0     0  38684      0 --:--:-- --:--:-- --:--:-- 38684
-==> WARNING: Skipping verification of source file PGP signatures.
-    jqp-0.7.0.tar.gz ... Passed
-    jqp-0.7.0.tar.gz ... Passed
-==> WARNING: Using existing $srcdir/ tree
-go: downloading github.com/alecthomas/chroma/v2 v2.14.0
-go: downloading github.com/charmbracelet/lipgloss v0.11.0
-go: downloading github.com/charmbracelet/bubbletea v0.26.4
-go: downloading github.com/spf13/cobra v1.8.0
-go: downloading github.com/spf13/viper v1.19.0
-go: downloading github.com/atotto/clipboard v0.1.4
-go: downloading github.com/charmbracelet/bubbles v0.18.0
-go: downloading github.com/itchyny/gojq v0.12.16
-go: downloading github.com/mattn/go-runewidth v0.0.15
-go: downloading github.com/rivo/uniseg v0.4.7
-go: downloading github.com/charmbracelet/x/ansi v0.1.2
-go: downloading github.com/muesli/termenv v0.15.2
-go: downloading github.com/charmbracelet/x/term v0.1.1
-go: downloading github.com/muesli/ansi v0.0.0-20230316100256-276c6243b2f6
-go: downloading github.com/muesli/cancelreader v0.2.2
-go: downloading golang.org/x/sync v0.7.0
-go: downloading github.com/spf13/pflag v1.0.5
-go: downloading github.com/itchyny/timefmt-go v0.1.6
-go: downloading github.com/charmbracelet/x/input v0.1.0
-go: downloading golang.org/x/sys v0.20.0
-go: downloading github.com/aymanbagabas/go-osc52/v2 v2.0.1
-go: downloading github.com/lucasb-eyer/go-colorful v1.2.0
-go: downloading github.com/mattn/go-isatty v0.0.20
-go: downloading github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f
-go: downloading github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e
-go: downloading github.com/dlclark/regexp2 v1.11.0
-go: downloading github.com/mitchellh/mapstructure v1.5.0
-go: downloading github.com/spf13/cast v1.6.0
-go: downloading github.com/fsnotify/fsnotify v1.7.0
-go: downloading github.com/sagikazarmark/slog-shim v0.1.0
-go: downloading github.com/spf13/afero v1.11.0
-go: downloading github.com/subosito/gotenv v1.6.0
-go: downloading github.com/hashicorp/hcl v1.0.0
-go: downloading gopkg.in/ini.v1 v1.67.0
-go: downloading github.com/magiconair/properties v1.8.7
-go: downloading github.com/pelletier/go-toml/v2 v2.2.2
-go: downloading gopkg.in/yaml.v3 v3.0.1
-go: downloading golang.org/x/text v0.14.0
-debugedit: ./usr/bin/jqp: DWARF version 0 unhandled
-Cloning into bare repository '/home/brigadira/.cache/yay/web-greeter/web-greeter-3.5.3'...
-==> WARNING: Skipping verification of source file PGP signatures.
-    web-greeter-3.5.3 ... Skipped
-    package.patch ... Passed
-    web-greeter-3.5.3 ... Skipped
-    package.patch ... Passed
-Cloning into 'web-greeter-3.5.3'...
-done.
-Switched to a new branch 'makepkg'
-Submodule 'themes' (https://github.com/JezerM/web-greeter-themes.git) registered for path 'themes'
-Cloning into '/home/brigadira/.cache/yay/web-greeter/src/web-greeter-3.5.3/themes'...
-Submodule 'ts-types' (https://github.com/JezerM/nody-greeter-types.git) registered for path 'themes/ts-types'
-Cloning into '/home/brigadira/.cache/yay/web-greeter/src/web-greeter-3.5.3/themes/ts-types'...
-==> WARNING: Using existing $srcdir/ tree
-Cloning into bare repository '/home/brigadira/.cache/yay/web-greeter-theme-shikai/Shikai'...
-==> WARNING: Skipping verification of source file PGP signatures.
-    Shikai ... Skipped
-    Shikai ... Skipped
-Cloning into 'Shikai'...
-done.
-==> WARNING: Using existing $srcdir/ tree
-warning: lightdm-1:1.32.0-6 is up to date -- skipping
-Cloning into '/home/brigadira/repos/fzf-git.sh'...
-Created symlink '/etc/systemd/system/multi-user.target.wants/sshd.service' → '/usr/lib/systemd/system/sshd.service'.
-Created symlink '/etc/systemd/system/multi-user.target.wants/xrdp.service' → '/usr/lib/systemd/system/xrdp.service'.
-Created symlink '/etc/systemd/system/printer.target.wants/cups.service' → '/usr/lib/systemd/system/cups.service'.
-Created symlink '/etc/systemd/system/multi-user.target.wants/cups.service' → '/usr/lib/systemd/system/cups.service'.
-Created symlink '/etc/systemd/system/sockets.target.wants/cups.socket' → '/usr/lib/systemd/system/cups.socket'.
-Created symlink '/etc/systemd/system/multi-user.target.wants/cups.path' → '/usr/lib/systemd/system/cups.path'.
-Created symlink '/etc/systemd/user/default.target.wants/pulseaudio.service' → '/usr/lib/systemd/user/pulseaudio.service'.
-Created symlink '/etc/systemd/system/display-manager.service' → '/usr/lib/systemd/system/lightdm.service'.
-Cloning into '/home/brigadira/.config/tmux/plugins/tpm'...
-==> WARNING: consolefont: no font found in configuration
-==> WARNING: Possibly missing firmware for module: 'ast'
-==> WARNING: Possibly missing firmware for module: 'xhci_pci'
-==> WARNING: consolefont: no font found in configuration
-==> WARNING: Possibly missing firmware for module: 'bfa'
-==> WARNING: Possibly missing firmware for module: 'qla1280'
-==> WARNING: Possibly missing firmware for module: 'qed'
-==> WARNING: Possibly missing firmware for module: 'aic94xx'
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
-==> WARNING: Possibly missing firmware for module: 'wd719x'
