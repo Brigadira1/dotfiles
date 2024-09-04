@@ -8,7 +8,8 @@ exec 2> >(tee -a log.err >&2)
 
 ARCH_PACKAGES_SCRIPT=add_arch_packages.sh
 CUSTOM_CONF_SCRIPT=custom_apps_config.sh
-STOW_SCRIPT=stow-dotfiles-script.sh
+# STOW_SCRIPT=stow-dotfiles-script.sh
+STOW_SCRIPT=run.sh
 NVIDIA_MADNESS=nvidia_madness.sh
 CURRENT_DIR=$(pwd)
 echo "Trying to source $ARCH_PACKAGES_SCRIPT, $CUSTOM_CONF_SCRIPT, $DOT_OS_CONFIGS and $NVIDIA_MADNESS"
