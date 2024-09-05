@@ -30,8 +30,8 @@ export HISTFILESIZE=10000
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
-bind "\C-p":history-search-backward
-bind "\C-n":history-search-forward
+bind '"\C-p": history-search-backward'
+bind '"\C-n": history-search-forward'
 
 eval "$(fzf --bash)"
 # --- setup fzf theme ---
