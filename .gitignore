@@ -2,6 +2,6 @@
 tmux/.config/tmux/plugins
 scripts/log.out
 scripts/log.err
-qtile/.config/qtile/__pycache__
+__pycache__
 nvim/.config/nvim/lazy-lock.json
 run.sh
