@@ -2,9 +2,7 @@
 tmux/.config/tmux/plugins
 scripts/log.out
 scripts/log.err
-__pycache__
-nvim/.config/nvim/lazy-lock.json
+**/__pycache__
 nitrogen/.config/nitrogen/nitrogen.cfg
 nvim/.config/nvim/lazy-lock.json
-qtile/.config/qtile/__pycache__/
 nitrogen/.config/nitrogen/bg-saved.cfg
