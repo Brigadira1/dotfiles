@@ -23,8 +23,9 @@ mod2 = "control"
 
 myBrowser = "brave"
 myTerminal = "alacritty"
-myFileManager = "vifm"
+# myFileManager = "vifm"
 myRun = "rofi"
+obsidian = "obsidian"
 
 rofi_command = f"{myRun} -show combi -combi-modi window,run,drun -modi combi"
 keys = [
@@ -101,12 +102,13 @@ keys = [
     ),
     Key([mod], "z", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod], "b", lazy.spawn(myBrowser), desc="Brave web browser"),
-    Key(
-        [mod],
-        "m",
-        lazy.spawn([myTerminal, "-e", myFileManager]),
-        desc="VIFM file manager",
-    ),
+    # Key(
+    #     [mod],
+    #     "m",
+    #     lazy.spawn([myTerminal, "-e", myFileManager]),
+    #     desc="VIFM file manager",
+    # ),
+    Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -291,22 +293,12 @@ groups.append(
                 height=0.4,
                 on_focus_lost_hide=False,
             ),
-            DropDown(
-                "onenote",
-                "brave --app=https://onedrive.live.com/edit?id=6870712FA88A41B2!21124&resid=6870712FA88A41B2!21124&cid=6870712fa88a41b2&cid=6870712fa88a41b2&wdo=6&wdorigin=701&cid=6870712fa88a41b2",
-                x=0.3,
-                y=0.1,
-                width=0.40,
-                height=0.4,
-                on_focus_lost_hide=False,
-            ),
         ],
     )
 )
 keys.extend(
     [
         Key([mod], "c", lazy.group["6"].dropdown_toggle("chatgpt")),
-        Key([mod], "o", lazy.group["6"].dropdown_toggle("onenote")),
     ]
 )
 # layouts = [
