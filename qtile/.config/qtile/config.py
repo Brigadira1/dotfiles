@@ -396,7 +396,8 @@ def init_widgets_list():
         widget.Memory(
             font="Hack Nerd",
             fontsize=15,
-            format="{MemUsed: .0f}{mm} /{MemTotal: .0f}{mm}",
+            format="{MemUsed: .2f}{mm} /{MemTotal: .2f}{mm}",
+            measure_mem="G",
             update_interval=1,
             foreground=colors[5],
             background=colors[1],
@@ -430,8 +431,8 @@ def init_widgets_list():
         widget.Clock(
             foreground=colors[5],
             background=colors[1],
-            fontsize=15,
-            format="%d-%m-%Y %H:%M",
+            fontsize=17,
+            format="%d.%m.%Y %H:%M",
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.CurrentLayoutIcon(
