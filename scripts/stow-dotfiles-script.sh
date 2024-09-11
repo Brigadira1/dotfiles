@@ -51,11 +51,23 @@ stow_package() {
     local package=$1
     local config_dir="$HOME/.config"
     local package_dir="$config_dir/$package"
-
     echo "Processing $package..."
 
-    # Check if the package has a corresponding folder in ~/.config
-    if [ -d "$package_dir" ]; then
+    if [ "$package" = "arch" ]; then
+        # Handle dotfiles in ~/dotfiles/arch
+        for file in "$DOTFILES_DIR/$package"/.*; do
+            if [ -f "$file" ] && [ "$(basename "$file")" != "." ] && [ "$(basename "$file")" != ".." ]; then
+                local basename=$(basename "$file")
+                local home_file="$HOME/$basename"
+                if [ -e "$home_file" ]; then
+                    backup_item "$home_file"
+                    echo "Removing existing $home_file"
+                    rm "$home_file"
+                fi
+            fi
+        done
+    elif [ -d "$package_dir" ]; then
+        # Check if the package has a corresponding folder in ~/.config
         backup_item "$package_dir"
         echo "Removing existing $package_dir"
         rm -rf "$package_dir"
