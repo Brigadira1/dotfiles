@@ -355,13 +355,13 @@ def init_widgets_list():
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.WindowName(
             font="Hack Nerd",
-            fontsize=15,
+            fontsize=17,
             foreground=colors[5],
             background=colors[1],
         ),
         widget.Net(
             font="Hack Nerd",
-            fontsize=15,
+            fontsize=17,
             interface="enp6s18",
             foreground=colors[2],
             background=colors[1],
@@ -378,7 +378,7 @@ def init_widgets_list():
         ),
         widget.CPU(
             font="Hack Nerd",
-            fontsize=15,
+            fontsize=17,
             update_interval=1.0,
             format="{load_percent}%",
             foreground=colors[5],
@@ -395,7 +395,7 @@ def init_widgets_list():
         ),
         widget.Memory(
             font="Hack Nerd",
-            fontsize=15,
+            fontsize=17,
             format="{MemUsed: .2f}{mm} /{MemTotal: .2f}{mm}",
             measure_mem="G",
             update_interval=1,
