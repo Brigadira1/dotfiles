@@ -192,7 +192,7 @@ fileviewer *.pdf
     filextype *.xcf
         \ gimp %f
     filextype *.png,*.jpg,*jpeg,*.bmp,*.gif,*.xpm
-        \ sxiv %f
+        \ nsxiv %f
     fileviewer <image/*>
         \ vifmimg draw %px %py %pw %ph %c
         \ %pc
@@ -275,8 +275,8 @@ nnoremap <space>x :tabclose<cr>
 " map za to show hidden files to .
 nnoremap . za
 
-" open all images in current directory in sxiv thumbnail mode
-nnoremap sx :!sxiv -tr %d & <cr>
+" open all images in current directory in nsxiv thumbnail mode
+nnoremap sx :!nsxiv -tr %d & <cr>
 
 " set selected wallpaper with a keybinding
 nnoremap bg :!xwallpaper --zoom %f <cr>

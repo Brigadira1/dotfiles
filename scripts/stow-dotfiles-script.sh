@@ -24,6 +24,7 @@ PACKAGES_TO_STOW=(
     starship
     tmux
     wallpapers
+    vifm
 )
 
 # List of folders to ignore
