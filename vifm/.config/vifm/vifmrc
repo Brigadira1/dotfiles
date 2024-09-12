@@ -182,15 +182,13 @@ fileviewer *.pdf
         \ vifmimg clear
 
     filextype *.avi,*.mp4,*.wmv,*.mkv,*.mpg,*.mpeg,*.vob,*.mov,*.webm,*.m4v
-        \ mpv %f
+        \ vlc %f
 
     fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
-    filextype *.xcf
-        \ gimp %f
     filextype *.png,*.jpg,*jpeg,*.bmp,*.gif,*.xpm
         \ nsxiv %f
     fileviewer <image/*>
@@ -198,10 +196,8 @@ fileviewer *.pdf
         \ %pc
         \ vifmimg clear
 
-    fileviewer *.mp3
-        \ mp3info
     filextype *.mp3
-        \ mpv %f
+        \ vlc %f
     fileviewer <audio/*>
         \ vifmimg audio %px %py %pw %ph %c
         \ %pc
@@ -215,7 +211,6 @@ fileviewer *.pdf
     fileviewer *.docx
         \ docx2txt %f
     fileviewer *.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
-        "\ batcat %f
         \ cat %f
     filextype *.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
         \ nvim %f
