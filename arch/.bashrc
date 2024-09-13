@@ -14,6 +14,7 @@ alias tree="eza --tree"
 alias cd="z"
 alias vim='nvim'
 alias cat='bat'
+alias vifm='~/.config/vifm/scripts/vifmrun .'
 
 export EDITOR=nvim
 export XDG_CONFIG_HOME=/home/brigadira/.config

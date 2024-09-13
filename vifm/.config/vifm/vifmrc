@@ -171,27 +171,27 @@ filetype *.zip,*.jar,*.war,*.ear FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_D
 filextype *.pdf
         \ zathura %f
 fileviewer *.pdf
-        \ vifmimg pdf %px %py %pw %ph %c
+        \ vifmimg pdfpreview %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
     filextype *.djvu
         \ zathura %f
-    fileviewer *.djvu
-        \ vifmimg djvu %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+    " fileviewer *.djvu
+    "     \ vifmimg djvu %px %py %pw %ph %c
+    "     \ %pc
+    "     \ vifmimg clear
 
-    fileviewer *.epub
-        \ vifmimg epub %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+    " fileviewer *.epub
+    "     \ vifmimg epub %px %py %pw %ph %c
+    "     \ %pc
+    "     \ vifmimg clear
 
     filextype *.avi,*.mp4,*.wmv,*.mkv,*.mpg,*.mpeg,*.vob,*.mov,*.webm,*.m4v
         \ vlc %f
 
     fileviewer <video/*>
-        \ vifmimg video %px %py %pw %ph %c
+        \ vifmimg videopreview %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
@@ -206,15 +206,15 @@ fileviewer *.pdf
         \ mp3info
     filextype *.mp3
         \ vlc %f
-    fileviewer <audio/*>
-        \ vifmimg audio %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+    " fileviewer <audio/*>
+    "     \ vifmimg audio %px %py %pw %ph %c
+    "     \ %pc
+    "     \ vifmimg clear
 
-    fileviewer <font/*>
-        \ vifmimg font %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+    " fileviewer <font/*>
+    "     \ vifmimg font %px %py %pw %ph %c
+    "     \ %pc
+    "     \ vifmimg clear
 
     fileviewer *.docx
         \ docx2txt %f
@@ -222,6 +222,11 @@ fileviewer *.pdf
         \ cat %f
     filextype *.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
         \ nvim %f
+
+" Web
+filextype *.html,*.htm
+        \ brave %f,
+filetype *.html,*.htm links, lynx
 
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 fileviewer *.html, *.htm, *.xhtml w3m -dump %c
