@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 readonly ID_PREVIEW="preview"
-
 #AUTO_REMOVE="yes"
 # By enabling this option the script will remove the preview file after it is drawn
 # and by doing so the preview will always be up-to-date with the file.
 # This however, requires more CPU and therefore affects the overall performance.
-
 if [ -e "$FIFO_UEBERZUG" ]; then
     if [[ "$1" == "draw" ]]; then
         declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
@@ -38,6 +36,15 @@ if [ -e "$FIFO_UEBERZUG" ]; then
         echo -e "Loading preview..\nFile: $6"
         [[ ! -d "/tmp${PWD}/$6/" ]] && mkdir -p "/tmp${PWD}/$6/"
         [[ ! -f "/tmp${PWD}/$6.png" ]] && pdftoppm -png -singlefile "$6" "/tmp${PWD}/$6"
+        declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+                           [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+                           [path]="/tmp${PWD}/$6.png") \
+            > "$FIFO_UEBERZUG"
+
+    elif [[ "$1" == "epubpreview" ]]; then
+        echo -e "Loading preview..\nFile: $6"
+        [[ ! -d "/tmp${PWD}/$6/" ]] && mkdir -p "/tmp${PWD}/$6/"
+        [[ ! -f "/tmp${PWD}/$6.png" ]] && epub-thumbnailer "$6" "/tmp${PWD}/$6.png" 1024
         declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                            [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
                            [path]="/tmp${PWD}/$6.png") \

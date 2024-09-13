@@ -182,10 +182,10 @@ fileviewer *.pdf
     "     \ %pc
     "     \ vifmimg clear
 
-    " fileviewer *.epub
-    "     \ vifmimg epub %px %py %pw %ph %c
-    "     \ %pc
-    "     \ vifmimg clear
+    fileviewer *.epub
+        \ vifmimg epubpreview %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
 
     filextype *.avi,*.mp4,*.wmv,*.mkv,*.mpg,*.mpeg,*.vob,*.mov,*.webm,*.m4v
         \ vlc %f
@@ -215,9 +215,10 @@ fileviewer *.pdf
     "     \ vifmimg font %px %py %pw %ph %c
     "     \ %pc
     "     \ vifmimg clear
-
-    fileviewer *.docx
-        \ docx2txt %f
+    fileviewer *.odt,*.doc,*.docx,*.ods,*.xls,*.xlsx
+     \ libreoffice --convert-to html --outdir /tmp/ %c &>/dev/null && w3m /tmp/%c:r.html
+    " fileviewer *.docx
+    "     \ docx2txt %f
     fileviewer *.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
         \ cat %f
     filextype *.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
