@@ -23,7 +23,7 @@ mod2 = "control"
 
 myBrowser = "brave"
 myTerminal = "alacritty"
-# myFileManager = "vifm"
+myFileManager = "vifm"
 myRun = "rofi"
 obsidian = "obsidian"
 
@@ -102,12 +102,12 @@ keys = [
     ),
     Key([mod], "z", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod], "b", lazy.spawn(myBrowser), desc="Brave web browser"),
-    # Key(
-    #     [mod],
-    #     "m",
-    #     lazy.spawn([myTerminal, "-e", myFileManager]),
-    #     desc="VIFM file manager",
-    # ),
+    Key(
+        [mod],
+        "m",
+        lazy.spawn([myTerminal, "-e", myFileManager]),
+        desc="VIFM file manager",
+    ),
     Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
