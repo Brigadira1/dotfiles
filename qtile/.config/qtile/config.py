@@ -105,7 +105,10 @@ keys = [
     Key(
         [mod],
         "m",
-        lazy.spawn([myTerminal, "-e", myFileManager]),
+        lazy.spawn(
+            f"{myTerminal} -e bash -c '~/.config/vifm/scripts/vifmrun .; exec bash'",
+            shell=True,
+        ),
         desc="VIFM file manager",
     ),
     Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
