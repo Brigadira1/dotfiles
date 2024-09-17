@@ -10,6 +10,7 @@ return {
 	},
 
 	opts = {
+		ui = { enable = false },
 		debug = true,
 		workspaces = {
 			{
