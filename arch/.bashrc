@@ -10,6 +10,7 @@ PS1='[\u@\h \W]\$ '
 alias grep='grep --color=auto'
 alias ll="eza --color=always --all --group-directories-first --long --git --icons=always"
 alias ls="eza --color=always --all --group-directories-first --long --no-time --git --icons=always"
+alias lt="eza --tree --level=2 --long --icons --git"
 alias tree="eza --tree"
 alias cd="z"
 alias vim='nvim'
