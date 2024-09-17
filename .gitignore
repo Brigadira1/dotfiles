@@ -7,3 +7,4 @@ nvim/.config/nvim/lazy-lock.json
 qtile/.config/qtile/__pycache__
 *.pyc
 nitrogen/.config/nitrogen/bg-saved.cfg
+vifm/.config/vifm/vifminfo.json
