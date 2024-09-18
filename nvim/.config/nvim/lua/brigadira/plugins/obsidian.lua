@@ -36,5 +36,13 @@ return {
 			min_chars = 2,
 			-- prepend_note_id = true,
 		},
+		-- Optional, for templates (see below).
+		templates = {
+			folder = "Templates",
+			date_format = "%d.%m.%Y",
+			time_format = "%H:%M",
+			-- A map for custom variables, the key should be the variable and the value a function
+			substitutions = {},
+		},
 	},
 }
