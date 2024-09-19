@@ -16,6 +16,9 @@ return {
 			{
 				name = "Obsidian",
 				path = "~/Obsidian/Obsidian",
+				overrides = {
+					notes_subdir = "0. Inbox",
+				},
 			},
 		},
 		wiki_link_func = function(opts)
