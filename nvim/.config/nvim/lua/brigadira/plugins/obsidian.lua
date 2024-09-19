@@ -11,11 +11,10 @@ return {
 
 	opts = {
 		ui = { enable = false },
-		debug = true,
 		workspaces = {
 			{
 				name = "Obsidian",
-				path = "~/Obsidian/Obsidian",
+				path = "~/Obsidian/Obsidian/",
 				overrides = {
 					notes_subdir = "0. Inbox",
 				},
