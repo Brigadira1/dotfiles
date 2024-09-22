@@ -38,6 +38,9 @@ return {
 			min_chars = 2,
 			-- prepend_note_id = true,
 		},
+		note_id_func = function(title)
+			return title
+		end,
 		-- Optional, for templates (see below).
 		templates = {
 			folder = "Templates",
