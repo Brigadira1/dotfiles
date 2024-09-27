@@ -14,7 +14,7 @@ return {
 		workspaces = {
 			{
 				name = "Obsidian",
-				path = "~/Obsidian/Obsidian/",
+				path = "~/Obsidian/",
 				overrides = {
 					notes_subdir = "0. Inbox",
 				},
