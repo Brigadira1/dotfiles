@@ -30,7 +30,7 @@ return {
 				"html",
 				"cssls",
 				"lua_ls",
-				"pyright",
+				"jedi_language_server",
 			},
 		})
 

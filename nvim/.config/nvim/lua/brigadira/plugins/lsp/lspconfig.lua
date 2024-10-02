@@ -87,6 +87,29 @@ return {
 			end,
 			-- hack to not attach ruff as LSP server to python files.
 			-- Now only pyright is used as LSP server
+			-- Jedi language server configuration
+			["jedi_language_server"] = function()
+				lspconfig["jedi_language_server"].setup({
+					capabilities = capabilities,
+					on_attach = function(client, bufnr)
+						-- You can customize the on_attach function here if necessary
+					end,
+					settings = {
+						jedi = {
+							completion = {
+								disableSnippets = false,
+								resolveEagerly = true, -- This may improve hover completion
+							},
+							hover = {
+								enable = true, -- Enable hover documentation
+							},
+							diagnostics = {
+								enable = true,
+							},
+						},
+					},
+				})
+			end,
 			["ruff"] = function() end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
