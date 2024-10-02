@@ -23,7 +23,7 @@ return {
 				virtual_text = isLspDiagnosticsVisible,
 				underline = isLspDiagnosticsVisible,
 			})
-		end)
+		end, { desc = "Hide linting for the current file" })
 		vim.keymap.set("n", "<leader>l", function()
 			lint.try_lint()
 		end, { desc = "Trigger linting for current file" })
