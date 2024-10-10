@@ -67,6 +67,15 @@ keymap.set("n", "<leader>ri", function()
 	local file = vim.fn.expand("%:p")
 	vim.cmd("sp | terminal python " .. vim.fn.shellescape(file))
 end, { noremap = true, silent = true, desc = "Run Python script" })
+-- Close the current terminal buffer
+keymap.set("n", "<leader>rc", function()
+	local bufnr = vim.fn.bufnr("%") -- Get the current buffer number
+	if vim.bo[bufnr].buftype == "terminal" then -- Ensure it's a terminal buffer
+		vim.cmd("bd!") -- Force close the buffer
+	else
+		print("Not in a terminal buffer")
+	end
+end, { noremap = true, silent = true, desc = "Close Terminal buffer" })
 
 -- Set a vim motion to <Space> + / to comment the line under the cursor in normal mode
 keymap.set("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", { desc = "Comment Line" })
