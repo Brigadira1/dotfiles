@@ -54,6 +54,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<leader>co", "<cmd>CompilerOpen<CR>", { desc = "Opens the compiler run menu" })
 keymap.set("n", "<leader>ct", "<cmd>CompilerToggleResults<CR>", { desc = "Toggles the compiler" })
 keymap.set("n", "<leader>cr", "<cmd>CompilerRedo<CR>", { desc = "Redos last action of the compiler" })
+keymap.set("n", "<leader>cs", "<cmd>CompilerStop<CR>", { desc = "Terminate all compiler tasks" })
 
 -- nvim-tree
 keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
