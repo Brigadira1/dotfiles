@@ -67,43 +67,16 @@ keymap.set("n", "<leader>ri", function()
 	local file = vim.fn.expand("%:p")
 	vim.cmd("sp | terminal python " .. vim.fn.shellescape(file))
 end, { noremap = true, silent = true, desc = "Run Python script" })
--- Close the current terminal buffer
-keymap.set("n", "<leader>rc", function()
-	local bufnr = vim.fn.bufnr("%") -- Get the current buffer number
-	if vim.bo[bufnr].buftype == "terminal" then -- Ensure it's a terminal buffer
-		vim.cmd("bd!") -- Force close the buffer
+-- Keymap to close buffer with <leader>rc
+vim.keymap.set("n", "<leader>rc", function()
+	local bufnr = vim.api.nvim_get_current_buf()
+	if vim.fn.getbufvar(bufnr, "&buftype") == "terminal" then
+		vim.api.nvim_buf_delete(bufnr, { force = true })
+		print("Terminal buffer closed.")
 	else
-		print("Not in a terminal buffer")
+		print("Not a terminal buffer.")
 	end
-end, { noremap = true, silent = true, desc = "Close Terminal buffer" })
--- Store the original environment variables to restore them later
-local original_path = vim.env.PATH
-
--- Function to detect and activate the virtual environment by modifying environment variables
-local function activate_virtualenv()
-	local venv_path = vim.fn.getcwd() .. "/venv"
-	local python_bin = venv_path .. "/bin/python"
-
-	if vim.fn.filereadable(python_bin) == 1 then
-		vim.env.PATH = venv_path .. "/bin:" .. original_path -- Prepend venv's bin directory to PATH
-		print("Virtual environment activated: " .. python_bin)
-	else
-		print("No virtual environment found in the current directory.")
-	end
-end
--- Function to deactivate the virtual environment by restoring the original environment variables
-local function deactivate_virtualenv()
-	vim.env.PATH = original_path -- Restore original PATH
-	print("Virtual environment deactivated.")
-end
--- Key mappings to enable/disable virtual environment
-vim.keymap.set("n", "<leader>ve", function()
-	activate_virtualenv()
-end, { noremap = true, silent = true, desc = "Activate virtual environment" })
-
-vim.keymap.set("n", "<leader>vd", function()
-	deactivate_virtualenv()
-end, { noremap = true, silent = true, desc = "Deactivate virtual environment" })
+end, { noremap = true, silent = true, desc = "Close terminal buffer" })
 -- Set a vim motion to <Space> + / to comment the line under the cursor in normal mode
 keymap.set("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", { desc = "Comment Line" })
 -- Set a vim motion to <Space> + / to comment all the lines selected in visual mode
