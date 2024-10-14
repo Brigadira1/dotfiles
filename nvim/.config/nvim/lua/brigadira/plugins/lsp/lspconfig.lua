@@ -96,6 +96,7 @@ return {
 					end,
 					settings = {
 						jedi = {
+							-- environment = "/home/brigadira/repos/python_fundamentals/venv/bin/python", -- Change this to your venv path
 							completion = {
 								disableSnippets = false,
 								resolveEagerly = true, -- This may improve hover completion

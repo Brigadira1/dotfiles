@@ -76,7 +76,34 @@ keymap.set("n", "<leader>rc", function()
 		print("Not in a terminal buffer")
 	end
 end, { noremap = true, silent = true, desc = "Close Terminal buffer" })
+-- Store the original environment variables to restore them later
+local original_path = vim.env.PATH
 
+-- Function to detect and activate the virtual environment by modifying environment variables
+local function activate_virtualenv()
+	local venv_path = vim.fn.getcwd() .. "/venv"
+	local python_bin = venv_path .. "/bin/python"
+
+	if vim.fn.filereadable(python_bin) == 1 then
+		vim.env.PATH = venv_path .. "/bin:" .. original_path -- Prepend venv's bin directory to PATH
+		print("Virtual environment activated: " .. python_bin)
+	else
+		print("No virtual environment found in the current directory.")
+	end
+end
+-- Function to deactivate the virtual environment by restoring the original environment variables
+local function deactivate_virtualenv()
+	vim.env.PATH = original_path -- Restore original PATH
+	print("Virtual environment deactivated.")
+end
+-- Key mappings to enable/disable virtual environment
+vim.keymap.set("n", "<leader>ve", function()
+	activate_virtualenv()
+end, { noremap = true, silent = true, desc = "Activate virtual environment" })
+
+vim.keymap.set("n", "<leader>vd", function()
+	deactivate_virtualenv()
+end, { noremap = true, silent = true, desc = "Deactivate virtual environment" })
 -- Set a vim motion to <Space> + / to comment the line under the cursor in normal mode
 keymap.set("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", { desc = "Comment Line" })
 -- Set a vim motion to <Space> + / to comment all the lines selected in visual mode
