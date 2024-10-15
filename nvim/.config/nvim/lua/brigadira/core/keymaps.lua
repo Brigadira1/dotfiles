@@ -4,9 +4,6 @@ local opts = { noremap = true, silent = true }
 
 local keymap = vim.keymap -- for conciseness
 
--- Turn off search matches with double-<Esc>
-keymap.set("n", "<ESC><ESC>", ":nohl<CR>", { desc = "Clear search highlights" })
-
 -- Keep matches center screen when cycling with n|N
 keymap.set("n", "n", "nzzzv", { desc = "Fwd  search '/' or '?'" })
 keymap.set("n", "N", "Nzzzv", { desc = "Back search '/' or '?'" })
