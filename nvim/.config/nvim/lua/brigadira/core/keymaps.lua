@@ -99,35 +99,80 @@ keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
 keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
 
+-- -- Debugging
+-- keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
+-- keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
+-- keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
+-- keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
+-- keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
+-- keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
+-- keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
+-- keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
+-- keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
+-- keymap.set("n", "<leader>dd", function()
+-- 	require("dap").disconnect()
+-- 	require("dapui").close()
+-- end)
+-- keymap.set("n", "<leader>dt", function()
+-- 	require("dap").terminate()
+-- 	require("dapui").close()
+-- end)
+-- keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
+-- keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
+-- keymap.set("n", "<leader>di", function()
+-- 	require("dap.ui.widgets").hover()
+-- end)
+-- keymap.set("n", "<leader>d?", function()
+-- 	local widgets = require("dap.ui.widgets")
+-- 	widgets.centered_float(widgets.scopes)
+-- end)
+-- keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
+-- keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
+-- keymap.set("n", "<leader>de", function()
+-- 	require("telescope.builtin").diagnostics({ default_text = ":E:" })
+-- end)
+
 -- Debugging
-keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
-keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
-keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
-keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
-keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
-keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
-keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
-keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
-keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
-keymap.set("n", "<leader>dd", function()
+keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "Debug Breakpoint" }) -- Toggle breakpoint
+keymap.set(
+	"n",
+	"<leader>cb",
+	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+	{ desc = "Set Conditional Breakpoint" }
+) -- Set conditional breakpoint
+keymap.set(
+	"n",
+	"<leader>dl",
+	"<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
+	{ desc = "Debug Log Point" }
+) -- Set log point
+keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.clear_breakpoints()<cr>", { desc = "Debug Clear Breakpoints" }) -- Clear breakpoints
+keymap.set("n", "<leader>da", "<cmd>Telescope dap list_breakpoints<cr>", { desc = "Debug List Breakpoints" }) -- List breakpoints
+
+keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", { desc = "Debug Continue" }) -- Continue debugging
+keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", { desc = "Debug Over" }) -- Step over the current line
+keymap.set("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", { desc = "Debug Inside" }) -- Step into the current function
+keymap.set("n", "<leader>du", "<cmd>lua require'dap'.step_out()<cr>", { desc = "Debug Step Out" }) -- Step out of the current function
+
+keymap.set("n", "<leader>ds", function()
 	require("dap").disconnect()
 	require("dapui").close()
-end)
+end, { desc = "Debug Stop" }) -- Stop debugging
+
 keymap.set("n", "<leader>dt", function()
 	require("dap").terminate()
 	require("dapui").close()
-end)
-keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
-keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
-keymap.set("n", "<leader>di", function()
-	require("dap.ui.widgets").hover()
-end)
+end, { desc = "Debug Terminate" }) -- Terminate debugging session
+
+keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", { desc = "Debug REPL" }) -- Toggle REPL for debugging
+keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = "Debug Run Last" }) -- Rerun last debug session
+keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>", { desc = "Debug Frames" }) -- Show debug frames
+keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>", { desc = "Debug Commands" }) -- Show available DAP commands
+keymap.set("n", "<leader>de", function()
+	require("telescope.builtin").diagnostics({ default_text = ":E:" })
+end, { desc = "Debug Diagnostics" }) -- Show diagnostics
+
 keymap.set("n", "<leader>d?", function()
 	local widgets = require("dap.ui.widgets")
 	widgets.centered_float(widgets.scopes)
-end)
-keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
-keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
-keymap.set("n", "<leader>de", function()
-	require("telescope.builtin").diagnostics({ default_text = ":E:" })
-end)
+end, { desc = "Debug Scopes" }) -- Show scopes in floating window
