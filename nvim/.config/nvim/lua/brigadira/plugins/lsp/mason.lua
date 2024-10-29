@@ -29,6 +29,7 @@ return {
 			ensure_installed = {
 				"html",
 				"cssls",
+				"emmet_ls",
 				"lua_ls",
 				"jedi_language_server",
 			},
