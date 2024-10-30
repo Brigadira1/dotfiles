@@ -127,6 +127,18 @@ return {
 					},
 				})
 			end,
+			-- HTML LSP for diagnostics
+			["html"] = function()
+				require("lspconfig")["html"].setup({
+					capabilities = capabilities,
+					settings = {
+						html = {
+							validate = { styles = true, scripts = true },
+						},
+					},
+				})
+			end,
+			-- ["html"] = function() end, -- disables the HTML LSP server if set up previously
 			["ruff"] = function() end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
