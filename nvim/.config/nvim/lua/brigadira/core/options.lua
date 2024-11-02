@@ -10,6 +10,15 @@ opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "html", "json", "yaml" },
+	callback = function()
+		opt.tabstop = 2
+		opt.shiftwidth = 2
+		opt.softtabstop = 2
+		opt.expandtab = true
+	end,
+})
 opt.wrap = false
 
 -- search settings
@@ -34,3 +43,4 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.conceallevel = 2
+opt.swapfile = false
