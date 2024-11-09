@@ -225,7 +225,7 @@ fileviewer *.pdf
     "     \ docx2txt %f
     fileviewer *.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
         \ cat %f
-    filextype *.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
+    filextype *.css,*.sh,*.txt,*.config,*.conf,*.vim,*.rc,*.*rc,*.h
         \ nvim %f
 
 " Web
