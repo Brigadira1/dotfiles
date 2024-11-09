@@ -112,6 +112,10 @@ set statusline="%1* %-10t %2* owner:%u:%-7g %5* size:%s %N %3* attr:%A %4* %20d 
 " :mark mark /full/directory/path [filename]
 mark h ~/
 mark d ~/Downloads
+mark p ~/repos/python_fundamentals/
+mark r ~/repos/
+mark D ~/dotfiles/
+mark o ~/Obsidian/
 " ------------------------------------------------------------------------------
 
 " :com[mand][!] command_name action
