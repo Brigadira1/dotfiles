@@ -24,7 +24,7 @@ opt.wrap = false
 -- Set timeout values for matchparen plugin to reduce sluggishness
 -- vim.g.matchparen_timeout = 1000
 -- vim.g.matchparen_insert_timeout = 1000
-vim.g.loaded_matchparen = 1
+-- vim.g.loaded_matchparen = 1
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
