@@ -11,7 +11,7 @@ initialize_packages() {
     local tools_packages=" qemu-guest-agent git lshw openssh openvpn protonvpn-cli pavucontrol plocate wget curl rsync nfs-utils cifs-utils btop net-tools tree less hwinfo qt5ct pass pacman-contrib"
     local themes_packages=" lxappearance gtk-engine-murrine gnome-themes-extra arc-gtk-theme papirus-icon-theme-git"
     local shell_packages=" bash-completion lsd alacritty starship shell-color-scripts-git"
-    local compress_packages=" gzip zip unzip unrar"
+    local compress_packages=" gzip zip fuse-zip unzip unrar"
     local helper_packages=" libxft harfbuzz libxinerama network-manager-applet reflector man tldr"
     local printer_packages=" cups hplip"
     # local piperwire_packages=" alsa-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-module-xrdp-git sof-firmware"
