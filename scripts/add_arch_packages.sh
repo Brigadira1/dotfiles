@@ -164,8 +164,23 @@ configure_services() {
 
 install_hack_nerd() {
 
+    local fontconfig = "$HOME/.config/fontconfig"
     echo "Starting installation of Hack Nerd font family..."
-    sudo pacman -S $INSTALLER_OPTIONS ttf-hack-nerd
+    sudo pacman -S $INSTALLER_OPTIONS ttf-hack-nerd noto-fonts-emoji
+
+    mkdir -p "$fontconfig"
+    echo '<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <alias>
+        <family>Hack Nerd Font</family>
+        <prefer>
+            <family>Noto Color Emoji</family>
+        </prefer>
+    </alias>
+</fontconfig>' > "$fontconfig/fonts.conf"
+
+    echo "Updating font cache..."
     fc-cache -v
 
 }
