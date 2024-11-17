@@ -86,6 +86,7 @@ keymap.set("v", ">", ">gv", { desc = "Indent right in visual mode" })
 -- Obsidian
 keymap.set("n", "<leader>zf", "<cmd>ObsidianSearch<cr>", { desc = "Fuzzy finding notes in workspace" })
 keymap.set("n", "<leader>zn", "<cmd>ObsidianNew<cr>", { desc = "Creating new note in workspace" })
+keymap.set("n", "<leader>zt", "<cmd>ObsidianTags<cr>", { desc = "Fuzzy finding tags in workspace" })
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Shows current opened buffers" })

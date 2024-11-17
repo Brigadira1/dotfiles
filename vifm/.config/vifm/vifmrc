@@ -199,12 +199,18 @@ fileviewer *.pdf
         \ %pc
         \ vifmimg clear
 
-    filextype *.png,*.jpg,*jpeg,*.bmp,*.gif,*.xpm
+    filextype *.png,*.jpg,*jpeg,*.bmp,*.gif,*.xpm,*.svg
         \ nsxiv %f
+
     fileviewer <image/*>
         \ vifmimg draw %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
+
+    fileviewer *.svg
+    \ rsvg-convert -w %pw -h %ph %c | vifmimg draw %px %py %pw %ph -
+    \ %pc
+    \ vifmimg clear
 
     fileviewer *.mp3
         \ mp3info
