@@ -23,7 +23,7 @@ initialize_packages() {
     local qtile_packages=" qtile qtile-extras"
     local nvidia_packages=" nvidia nvidia-utils nvidia-settings nvtop"
     local devops_packages=" stow zoxide eza fd fzf bat jq yq jqp rmlint ncdu speedtest-cli"
-    local essential_packages=" vlc zathura zathura-djvu zathura-pdf-mupdf nsxim libreoffice-fresh obsidian syncthing glow"
+    local essential_packages=" vlc zathura zathura-djvu zathura-pdf-mupdf nsxiv libreoffice-fresh obsidian syncthing glow"
     local basic_lightdm_packages=" web-greeter web-greeter-theme-shikai lightdm-gtk-greeter lightdm"
     # local advanced_lightdm_packages=" lightdm lightdm-webkit-theme-aether"
 
