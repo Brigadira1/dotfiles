@@ -21,7 +21,7 @@ set vicmd=nvim
 set syscalls
 
 set trash
-set trashdir="~/.local/share/trash/files/"
+set trashdir="~/.vifmtrash"
 
 " This is how many directories to store in the directory history.
 
@@ -88,7 +88,8 @@ set incsearch
 set scrolloff=8
 
 " Dont show delete confirmation
-set confirm-=delete
+" set confirm-=delete
+set confirm=overwrite
 
 " Having a relative numberline makes it very easy navigate to files
 set relativenumber
