@@ -11,7 +11,7 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "html", "json", "yaml" },
+	pattern = { "html", "json", "yaml", "css", "scss" },
 	callback = function()
 		opt.tabstop = 2
 		opt.shiftwidth = 2
