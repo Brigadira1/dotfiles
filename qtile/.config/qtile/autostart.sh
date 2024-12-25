@@ -19,6 +19,6 @@
 # Load picom
 # Executable flags except for the user were removed
 
-nitrogen --restore --set-zoom-fill &
-setxkbmap -model pc104 -layout us,bg -variant ,phonetic -option grp:win_space_toggle &
-picom --config /home/brigadira/.config/picom/picom.conf -f &
+# nitrogen --restore --set-zoom-fill &
+# setxkbmap -model pc104 -layout us,bg -variant ,phonetic -option grp:win_space_toggle &
+# picom --config /home/brigadira/.config/picom/picom.conf -f &
