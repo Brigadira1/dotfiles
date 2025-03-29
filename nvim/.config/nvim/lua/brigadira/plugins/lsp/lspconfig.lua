@@ -138,6 +138,11 @@ return {
 					},
 				})
 			end,
+			["tsserver"] = function()
+				lspconfig["tsserver"].setup({
+					capabilities = capabilities,
+				})
+			end,
 			-- ["html"] = function() end, -- disables the HTML LSP server if set up previously
 			["ruff"] = function() end,
 			["lua_ls"] = function()

@@ -32,6 +32,7 @@ return {
 				"emmet_ls",
 				"lua_ls",
 				"jedi_language_server",
+				"tsserver",
 			},
 		})
 
@@ -44,6 +45,7 @@ return {
 				"ruff",
 				"eslint_d",
 				"debugpy",
+				"typescript-language-server",
 			},
 		})
 	end,

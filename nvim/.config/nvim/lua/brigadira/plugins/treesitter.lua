@@ -37,6 +37,7 @@ return {
 				"vimdoc",
 				"c",
 				"python",
+				"javascript",
 			},
 			incremental_selection = {
 				enable = true,
