@@ -84,7 +84,7 @@ _fzf_comprun() {
 export BAT_THEME=tokyonight_night
 
 # ---- Zoxide (better cd) ----
-eval "$(zoxide init bash)"
 eval "$(starship init bash)"
 set -o vi
 colorscript random
+eval "$(zoxide init bash)"
