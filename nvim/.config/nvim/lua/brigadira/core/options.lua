@@ -29,6 +29,7 @@ opt.wrap = false
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive search
+opt.wildignorecase = true -- if you have mixed letters in COMMAND mode in neovim, tab completion will still work i.e. :nvimtree is the same as :NvimTree
 
 opt.cursorline = true
 
