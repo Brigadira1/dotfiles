@@ -32,7 +32,6 @@ return {
 				"emmet_ls",
 				"lua_ls",
 				"jedi_language_server",
-				"tsserver",
 			},
 		})
 
