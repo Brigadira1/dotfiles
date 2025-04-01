@@ -22,12 +22,14 @@ mod1 = "alt"
 mod2 = "control"
 
 myBrowser = "brave"
+flameshot = "flameshot gui"
 myTerminal = "alacritty"
 myFileManager = "vifm"
 myRun = "rofi"
 obsidian = "obsidian"
 
-rofi_command = f"{myRun} -show combi -combi-modi window,run,drun -modi combi"
+# With this command line, rofi will show only the applications installed.
+rofi_command = f"{myRun} -show drun"
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -111,6 +113,7 @@ keys = [
         ),
         desc="VIFM file manager",
     ),
+    Key([mod], "s", lazy.spawn(flameshot), desc="Screenshot Utility (flameshot)"),
     Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
