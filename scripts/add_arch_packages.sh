@@ -19,6 +19,7 @@ initialize_packages() {
     local python_packages=" python python-pip python-psutil"
     local neovim_packages=" neovim xclip ripgrep nodejs npm"
     local vifm_packages=" vifm docx2txt mp3info w3m ueberzug ffmpegthumbnailer epub-thumbnailer-git"
+    local yazi_packages=" yazi poppler ffmpeg"
     local core_packages=" flameshot rofi picom nitrogen tmux brave-bin nomachine"
     local qtile_packages=" qtile qtile-extras"
     local nvidia_packages=" nvidia nvidia-utils nvidia-settings nvtop"
@@ -40,6 +41,7 @@ initialize_packages() {
     PACKAGES+=$python_packages
     PACKAGES+=$neovim_packages
     PACKAGES+=$vifm_packages
+    PACKAGES+=$yazi_packages
     PACKAGES+=$core_packages
     PACKAGES+=$qtile_packages
     PACKAGES+=$nvidia_packages
