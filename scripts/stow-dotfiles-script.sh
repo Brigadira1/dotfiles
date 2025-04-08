@@ -25,6 +25,8 @@ PACKAGES_TO_STOW=(
     tmux
     wallpapers
     vifm
+    yazi
+    kitty
 )
 
 # List of folders to ignore
