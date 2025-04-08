@@ -23,7 +23,7 @@ mod2 = "control"
 
 myBrowser = "brave"
 flameshot = "flameshot gui"
-myTerminal = "alacritty"
+myTerminal = "kitty"
 myFileManager = "vifm"
 myRun = "rofi"
 obsidian = "obsidian"
