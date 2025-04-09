@@ -80,6 +80,16 @@ _fzf_comprun() {
   esac
 }
 
+# This allows yazi to be started only with the letter y, and when started like that you can quit in the current directory from the yazi screen
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # ----- Bat (better cat) -----
 export BAT_THEME=tokyonight_night
 
