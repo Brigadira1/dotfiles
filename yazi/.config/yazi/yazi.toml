@@ -1,4 +1,3 @@
-
 # Yazi config for Arch Linux with custom openers for Zathura, LibreOffice, VLC, Neovim, and nsxiv
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
@@ -56,7 +55,17 @@ open_default = [
 [open]
 rules = [
   { mime = "application/pdf", use = [ "open_pdf", "reveal" ] },
-  { mime = "application/vnd.openxmlformats-officedocument*", use = [ "open_office", "reveal" ] },
+
+# Word (DOCX)
+{ mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = [ "open_office", "reveal" ] },
+{ name = "*.docx", use = [ "open_office", "reveal" ] },
+# Excel (XLSX)
+{ mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = [ "open_office", "reveal" ] },
+{ name = "*.xlsx", use = [ "open_office", "reveal" ] },
+# PowerPoint (PPTX)
+{ mime = "application/vnd.openxmlformats-officedocument.presentationml.presentation", use = [ "open_office", "reveal" ] },
+{ name = "*.pptx", use = [ "open_office", "reveal" ] },
+#  { mime = "application/vnd.openxmlformats-officedocument*", use = [ "open_office", "reveal" ] },
   { mime = "application/msword", use = [ "open_office", "reveal" ] },
   { mime = "application/vnd.ms-*", use = [ "open_office", "reveal" ] },
 
