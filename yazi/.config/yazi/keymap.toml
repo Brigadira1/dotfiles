@@ -130,6 +130,11 @@ keymap = [
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go home" },
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go ~/.config" },
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
+	{ on = [ "g", "p" ],       run = "cd ~/repos/python_fundamentals",   desc = "Go ~/repos/python_fundamentals" },
+	{ on = [ "g", "o" ],       run = "cd ~/Obsidian",   desc = "Go ~/Obsidian" },
+	{ on = [ "g", "D" ],       run = "cd ~/dotfiles",   desc = "Go ~/dotfiles" },
+	{ on = [ "g", "s" ],       run = "cd /mnt/synology",   desc = "Go Synology NAS" },
+	{ on = [ "g", "r" ],       run = "cd /",   desc = "Go root of the file system" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Jump interactively" },
 	{ on = [ "g", "f" ],       run = "follow",           desc = "Follow hovered symlink" },
 
