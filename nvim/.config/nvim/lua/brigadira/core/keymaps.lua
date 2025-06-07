@@ -24,6 +24,9 @@ keymap.set("n", "<C-u>", "<C-u>zz", opts)
 keymap.set("i", "<C-E>", "<C-o>$", opts)
 keymap.set("i", "<C-A>", "<C-o>^", opts)
 
+-- Mimic Windows behavior: Ctrl+Backspace deletes previous word
+keymap.set("i", "<C-H>", "<C-W>", { noremap = true, silent = true })
+
 -- windows management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split windows vertically
 -- keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split windows horizontally
