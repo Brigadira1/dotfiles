@@ -29,6 +29,7 @@ export PROMPT_COMMAND='history -a'
 export HISTCONTROL=ignoreboth
 export HISTSIZE=3000
 export HISTFILESIZE=10000
+export OPENAI_API_KEY=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
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
