@@ -15,7 +15,7 @@ from typing import List  # noqa: F401
 from libqtile import bar, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, DropDown, Group, Key, Match, ScratchPad, Screen
 from libqtile.lazy import lazy
-from libqtile.widget import Spacer
+from libqtile.widget import Spacer, keyboardlayout
 
 mod = "mod4"
 mod1 = "alt"
@@ -115,6 +115,12 @@ keys = [
     ),
     Key([mod], "s", lazy.spawn(flameshot), desc="Screenshot Utility (flameshot)"),
     Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
+    Key(
+        [mod],
+        "space",
+        lazy.widget["keyboardlayout"].next_keyboard(),
+        desc="Switch keyboard layout",
+    ),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -372,6 +378,25 @@ def init_widgets_list():
             foreground=colors[2],
             background=colors[1],
             padding=0,
+        ),
+        widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
+        widget.TextBox(
+            font="Hack Nerd",
+            text="  ",
+            foreground=colors[4],
+            background=colors[1],
+            padding=0,
+            fontsize=16,
+        ),
+        widget.KeyboardLayout(
+            name="keyboardlayout",
+            configured_keyboards=["us", "bg(phonetic)"],
+            display_map={"us": "US", "bg(phonetic)": "BG"},
+            font="Hack Nerd",
+            fontsize=17,
+            foreground=colors[5],
+            background=colors[1],
+            padding=5,
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.TextBox(
