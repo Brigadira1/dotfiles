@@ -16,7 +16,7 @@ initialize_packages() {
     local printer_packages=" cups hplip"
     # local piperwire_packages=" alsa-utils pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-module-xrdp-git sof-firmware"
     local pulseaudio=" pulseaudio"
-    local python_packages=" python python-pip python-psutil"
+    local python_packages=" python python-uv python-psutil"
     local neovim_packages=" neovim xclip ripgrep nodejs npm"
     local vifm_packages=" vifm docx2txt mp3info w3m ueberzug ffmpegthumbnailer epub-thumbnailer-git"
     local yazi_packages=" yazi 7zip poppler ffmpeg"
