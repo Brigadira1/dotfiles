@@ -65,7 +65,7 @@ keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file
 -- Run a python script
 keymap.set("n", "<leader>ri", function()
 	local file = vim.fn.expand("%:p")
-	vim.cmd("sp | terminal python " .. vim.fn.shellescape(file))
+	vim.cmd("sp | terminal uv run " .. vim.fn.shellescape(file))
 end, { noremap = true, silent = true, desc = "Run Python script" })
 -- Keymap to close buffer with <leader>rc
 vim.keymap.set("n", "<leader>rc", function()
