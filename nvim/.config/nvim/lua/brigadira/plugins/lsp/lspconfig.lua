@@ -74,7 +74,7 @@ return {
 				"jedi_language_server",
 				"html",
 				"emmet_ls",
-				"tsserver",
+				"ts_ls",
 				"lua_ls",
 			},
 			handlers = {
@@ -89,7 +89,7 @@ return {
 						capabilities = capabilities,
 						settings = {
 							jedi = {
-								-- environment = "/home/brigadira/repos/python_fundamentals/python/bin/python",
+								environment = vim.fn.getcwd() .. "/.venv/bin/python",
 								completion = {
 									disableSnippets = false,
 									resolveEagerly = true,
