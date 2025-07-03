@@ -31,7 +31,7 @@ return {
 				"cssls",
 				"emmet_ls",
 				"lua_ls",
-				"jedi_language_server",
+				"pyright", -- replaced "jedi_language_server"
 			},
 		})
 

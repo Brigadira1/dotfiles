@@ -71,7 +71,7 @@ return {
 		-- Configure Mason LSP setup with new handlers table
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"jedi_language_server",
+				"pyright",
 				"html",
 				"emmet_ls",
 				"ts_ls",
@@ -84,18 +84,16 @@ return {
 					})
 				end,
 
-				jedi_language_server = function()
-					lspconfig["jedi_language_server"].setup({
+				pyright = function()
+					lspconfig["pyright"].setup({
 						capabilities = capabilities,
 						settings = {
-							jedi = {
-								environment = vim.fn.getcwd() .. "/.venv/bin/python",
-								completion = {
-									disableSnippets = false,
-									resolveEagerly = true,
+							python = {
+								analysis = {
+									autoSearchPaths = true,
+									useLibraryCodeForTypes = true,
+									diagnosticMode = "workspace",
 								},
-								hover = { enable = true },
-								diagnostics = { enable = true },
 							},
 						},
 					})
