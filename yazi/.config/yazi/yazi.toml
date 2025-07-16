@@ -1,7 +1,7 @@
 # Yazi config for Arch Linux with custom openers for Zathura, LibreOffice, VLC, Neovim, and nsxiv
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[manager]
+[mgr]
 ratio = [ 1, 4, 3 ]
 sort_by = "alphabetical"
 sort_sensitive = false
