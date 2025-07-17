@@ -1,0 +1,211 @@
+# "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[flavor]
+use = "tokyo-night"
+dark = "tokyo-night"
+
+[manager]
+ratio = [1, 4, 3]
+sort_by = "alphabetical"
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+sort_translit = false
+linemode = "size_and_mtime"
+show_hidden = true
+show_symlink = true
+scrolloff = 5
+mouse_events = ["click", "scroll"]
+title_format = "Yazi: {cwd}"
+
+[preview]
+wrap = "no"
+tab_size = 2
+max_width = 600
+max_height = 900
+cache_dir = "~/.cache/yazi"
+image_delay = 30
+image_filter = "triangle"
+image_quality = 75
+sixel_fraction = 15
+ueberzug_scale = 1
+ueberzug_offset = [0, 0, 0, 0]
+
+[opener]
+open_default = [
+    { run = 'start "" "%1"', desc = "Open with default app", orphan = true, for = "windows" },
+]
+edit = [
+    { run = 'nvim %*', desc = "Edit with Neovim", block = true, for = "windows" },
+]
+
+[open]
+rules = [
+    { name = "*.msg", use = [
+        "open_default",
+        "reveal",
+    ] },
+    # Office files by extension
+    { name = "*.docx", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { name = "*.doc", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { name = "*.xlsx", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { name = "*.xls", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { name = "*.pptx", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { name = "*.ppt", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { name = "*.log", use = [
+        "edit",
+        "reveal",
+    ] },
+    # Office (PowerPoint, Word, Excel)
+    { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { mime = "application/vnd.openxmlformats-officedocument.presentationml.presentation", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { mime = "application/msword", use = [
+        "open_default",
+        "reveal",
+    ] },
+    { mime = "application/vnd.ms-*", use = [
+        "open_default",
+        "reveal",
+    ] },
+
+    # PDFs
+    { mime = "application/pdf", use = [
+        "open_default",
+        "reveal",
+    ] },
+
+    # Media
+    { mime = "{audio,video}/*", use = [
+        "open_default",
+        "reveal",
+    ] },
+
+    # Images
+    { mime = "image/*", use = [
+        "open_default",
+        "reveal",
+    ] },
+
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress}", use = [
+        "open_default",
+        "reveal",
+    ] },
+
+    # Text-based / scripts → Neovim
+    { mime = "text/*", use = [
+        "edit",
+        "reveal",
+    ] },
+    { mime = "application/json", use = [
+        "edit",
+        "reveal",
+    ] },
+    { mime = "application/x-shellscript", use = [
+        "edit",
+        "reveal",
+    ] },
+
+    # Fallback
+    { name = "*", use = [
+        "edit",
+        "reveal",
+    ] },
+]
+
+[tasks]
+micro_workers = 10
+macro_workers = 10
+bizarre_retry = 3
+image_alloc = 536870912
+image_bound = [0, 0]
+suppress_preload = false
+
+[plugin]
+fetchers = [{ id = "mime", name = "*", run = "mime", prio = "high" }]
+spotters = [
+    { name = "*/", run = "folder" },
+    { mime = "text/*", run = "code" },
+    { mime = "image/*", run = "image" },
+    { mime = "video/*", run = "video" },
+    { name = "*", run = "file" },
+]
+preloaders = [
+    { mime = "image/*", run = "image" },
+    { mime = "video/*", run = "video" },
+    { mime = "application/pdf", run = "pdf" },
+    { mime = "font/*", run = "font" },
+]
+previewers = [
+    { name = "*/", run = "folder" },
+    { mime = "text/*", run = "code" },
+    { mime = "application/json", run = "json" },
+    { mime = "image/*", run = "image" },
+    { mime = "video/*", run = "video" },
+    { mime = "application/pdf", run = "pdf" },
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma}", run = "archive" },
+    { mime = "font/*", run = "font" },
+    { mime = "inode/empty", run = "empty" },
+    { name = "*", run = "file" },
+]
+
+[input]
+cursor_blink = false
+
+[confirm]
+trash_title = "Trash {n} selected file{s}?"
+trash_origin = "center"
+trash_offset = [0, 0, 70, 20]
+
+delete_title = "Permanently delete {n} selected file{s}?"
+delete_origin = "center"
+delete_offset = [0, 0, 70, 20]
+
+overwrite_title = "Overwrite file?"
+overwrite_content = "Will overwrite the following file:"
+overwrite_origin = "center"
+overwrite_offset = [0, 0, 50, 15]
+
+quit_title = "Quit?"
+quit_content = "The following tasks are still running, are you sure you want to quit?"
+quit_origin = "center"
+quit_offset = [0, 0, 50, 15]
+
+[pick]
+open_title = "Open with:"
+open_origin = "hovered"
+open_offset = [0, 1, 50, 7]
+
+[which]
+sort_by = "none"
+sort_sensitive = false
+sort_reverse = false
+sort_translit = false
