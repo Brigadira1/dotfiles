@@ -1,9 +1,4 @@
 [[plugin.deps]]
-use = "yazi-rs/plugins:smart-enter"
-rev = "a1738e8"
-hash = "7918aab6a71caf31b58411f789195677"
-
-[[plugin.deps]]
 use = "AnirudhG07/archivemount"
 rev = "3d353c4"
 hash = "28caf2541e627582e75add7a9f98a32a"
