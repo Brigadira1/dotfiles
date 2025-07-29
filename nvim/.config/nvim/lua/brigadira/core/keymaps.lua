@@ -64,9 +64,17 @@ keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file
 
 -- Run a python script
 keymap.set("n", "<leader>ri", function()
-	local file = vim.fn.expand("%:p")
-	vim.cmd("sp | terminal uv run " .. vim.fn.shellescape(file))
-end, { noremap = true, silent = true, desc = "Run Python script" })
+	local full = vim.fn.expand("%:p")
+	local root = vim.fn.getcwd() -- assuming opened with nvim .
+	local rel = vim.fn.fnamemodify(full, ":." --[[@as string]])
+	local module = rel:gsub("/", "."):gsub("%.py$", "")
+	vim.cmd("sp | terminal uv run -m " .. module)
+end, { noremap = true, silent = true, desc = "Run Python module" })
+
+-- keymap.set("n", "<leader>ri", function()
+-- 	local file = vim.fn.expand("%:p")
+-- 	vim.cmd("sp | terminal uv run " .. vim.fn.shellescape(file))
+-- end, { noremap = true, silent = true, desc = "Run Python script" })
 -- Keymap to close buffer with <leader>rc
 vim.keymap.set("n", "<leader>rc", function()
 	local bufnr = vim.api.nvim_get_current_buf()
