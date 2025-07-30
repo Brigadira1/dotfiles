@@ -111,6 +111,20 @@ keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
 keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
 
+-- Terminal/Command line within Neovim
+-- Open terminal in current buffer's folder (without changing Neovim's working directory)
+keymap.set("n", "<leader>sh", function()
+	local file_dir = vim.fn.expand("%:p:h")
+	vim.cmd("split")
+	vim.cmd("resize 15")
+	vim.cmd("terminal")
+	vim.fn.chansend(vim.b.terminal_job_id, "cd " .. file_dir .. "\n")
+	vim.cmd("startinsert")
+end, { desc = "Open terminal in buffer folder" })
+
+-- Close terminal quickly with <Esc><Esc>
+keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>:bd!<CR>]], { desc = "Close terminal" })
+
 -- -- Debugging
 -- keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
 -- keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
