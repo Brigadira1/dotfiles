@@ -1,6 +1,8 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	branch = "0.1.x",
+	-- The reference to the master branch was added in order to get rid of some of the deprecation warnings when using the stable branch
+	branch = "master",
+	-- branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
