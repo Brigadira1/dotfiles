@@ -106,7 +106,7 @@ return {
 						typeCheckingMode = "basic",
 						autoImportCompletions = true,
 						autoSearchPaths = true,
-						diagnosticMode = "workspace",
+						diagnosticMode = "openFilesOnly",
 						useLibraryCodeForTypes = true,
 					},
 				},
