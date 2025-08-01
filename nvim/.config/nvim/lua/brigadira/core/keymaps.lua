@@ -62,29 +62,6 @@ keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFile<CR>", { desc = "Toggle file
 keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
 keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
 
--- Run a python script
-keymap.set("n", "<leader>ri", function()
-	local full = vim.fn.expand("%:p")
-	local root = vim.fn.getcwd() -- assuming opened with nvim .
-	local rel = vim.fn.fnamemodify(full, ":." --[[@as string]])
-	local module = rel:gsub("/", "."):gsub("%.py$", "")
-	vim.cmd("sp | terminal uv run -m " .. module)
-end, { noremap = true, silent = true, desc = "Run Python module" })
-
--- keymap.set("n", "<leader>ri", function()
--- 	local file = vim.fn.expand("%:p")
--- 	vim.cmd("sp | terminal uv run " .. vim.fn.shellescape(file))
--- end, { noremap = true, silent = true, desc = "Run Python script" })
--- Keymap to close buffer with <leader>rc
-vim.keymap.set("n", "<leader>rc", function()
-	local bufnr = vim.api.nvim_get_current_buf()
-	if vim.fn.getbufvar(bufnr, "&buftype") == "terminal" then
-		vim.api.nvim_buf_delete(bufnr, { force = true })
-		print("Terminal buffer closed.")
-	else
-		print("Not a terminal buffer.")
-	end
-end, { noremap = true, silent = true, desc = "Close terminal buffer" })
 -- Set a vim motion to <Space> + / to comment the line under the cursor in normal mode
 keymap.set("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", { desc = "Comment Line" })
 -- Set a vim motion to <Space> + / to comment all the lines selected in visual mode
@@ -111,52 +88,48 @@ keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
 keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
 
+-- Run a python script
+keymap.set("n", "<leader>ri", function()
+	local full = vim.fn.expand("%:p")
+	local root = vim.fn.getcwd() -- assuming opened with nvim .
+	local rel = vim.fn.fnamemodify(full, ":." --[[@as string]])
+	local module = rel:gsub("/", "."):gsub("%.py$", "")
+	vim.cmd("sp | terminal uv run -m " .. module)
+end, { noremap = true, silent = true, desc = "Run Python module" })
+
+-- keymap.set("n", "<leader>ri", function()
+-- 	local file = vim.fn.expand("%:p")
+-- 	vim.cmd("sp | terminal uv run " .. vim.fn.shellescape(file))
+-- end, { noremap = true, silent = true, desc = "Run Python script" })
+
+-- Keymap to close buffer with <leader>rc
+vim.keymap.set("n", "<leader>rc", function()
+	local bufnr = vim.api.nvim_get_current_buf()
+	if vim.fn.getbufvar(bufnr, "&buftype") == "terminal" then
+		vim.api.nvim_buf_delete(bufnr, { force = true })
+		print("Terminal buffer closed.")
+	else
+		print("Not a terminal buffer.")
+	end
+end, { noremap = true, silent = true, desc = "Close terminal buffer" })
+
 -- Terminal/Command line within Neovim
 -- Open terminal in current buffer's folder (without changing Neovim's working directory)
-keymap.set("n", "<leader>sh", function()
+vim.keymap.set("n", "<leader>ot", function()
 	local file_dir = vim.fn.expand("%:p:h")
 	vim.cmd("split")
-	vim.cmd("resize 15")
+	vim.cmd("resize 25")
 	vim.cmd("terminal")
-	vim.fn.chansend(vim.b.terminal_job_id, "cd " .. file_dir .. "\n")
+
+	-- Properly quote the path to handle spaces
+	local cd_cmd = 'cd "' .. file_dir .. '"\n'
+	vim.fn.chansend(vim.b.terminal_job_id, cd_cmd)
+
 	vim.cmd("startinsert")
-end, { desc = "Open terminal in buffer folder" })
+end, { desc = "Open terminal in current buffer's directory" })
 
 -- Close terminal quickly with <Esc><Esc>
 keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>:bd!<CR>]], { desc = "Close terminal" })
-
--- -- Debugging
--- keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
--- keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
--- keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
--- keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
--- keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
--- keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
--- keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
--- keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
--- keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
--- keymap.set("n", "<leader>dd", function()
--- 	require("dap").disconnect()
--- 	require("dapui").close()
--- end)
--- keymap.set("n", "<leader>dt", function()
--- 	require("dap").terminate()
--- 	require("dapui").close()
--- end)
--- keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
--- keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
--- keymap.set("n", "<leader>di", function()
--- 	require("dap.ui.widgets").hover()
--- end)
--- keymap.set("n", "<leader>d?", function()
--- 	local widgets = require("dap.ui.widgets")
--- 	widgets.centered_float(widgets.scopes)
--- end)
--- keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
--- keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
--- keymap.set("n", "<leader>de", function()
--- 	require("telescope.builtin").diagnostics({ default_text = ":E:" })
--- end)
 
 -- Debugging
 keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "Debug Breakpoint" }) -- Toggle breakpoint
@@ -202,3 +175,36 @@ keymap.set("n", "<leader>d?", function()
 	local widgets = require("dap.ui.widgets")
 	widgets.centered_float(widgets.scopes)
 end, { desc = "Debug Scopes" }) -- Show scopes in floating window
+
+-- -- Debugging
+-- keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
+-- keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
+-- keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
+-- keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
+-- keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
+-- keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
+-- keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
+-- keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
+-- keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
+-- keymap.set("n", "<leader>dd", function()
+-- 	require("dap").disconnect()
+-- 	require("dapui").close()
+-- end)
+-- keymap.set("n", "<leader>dt", function()
+-- 	require("dap").terminate()
+-- 	require("dapui").close()
+-- end)
+-- keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
+-- keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
+-- keymap.set("n", "<leader>di", function()
+-- 	require("dap.ui.widgets").hover()
+-- end)
+-- keymap.set("n", "<leader>d?", function()
+-- 	local widgets = require("dap.ui.widgets")
+-- 	widgets.centered_float(widgets.scopes)
+-- end)
+-- keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
+-- keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
+-- keymap.set("n", "<leader>de", function()
+-- 	require("telescope.builtin").diagnostics({ default_text = ":E:" })
+-- end)
