@@ -208,3 +208,4 @@ end, { desc = "Debug Scopes" }) -- Show scopes in floating window
 -- keymap.set("n", "<leader>de", function()
 -- 	require("telescope.builtin").diagnostics({ default_text = ":E:" })
 -- end)
+--

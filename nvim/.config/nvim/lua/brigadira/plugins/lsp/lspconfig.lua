@@ -7,32 +7,19 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
-		local mason_lspconfig = require("mason-lspconfig")
-		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		-- Diagnostic signs
+		local signs = {
+			Error = " ",
+			Warn = " ",
+			Hint = " ",
+			Info = " ",
+		}
+		for type, icon in pairs(signs) do
+			local hl = "DiagnosticSign" .. type
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+		end
 
-		local capabilities = cmp_nvim_lsp.default_capabilities()
-
-		-- Setup signs for diagnostics
-		-- This was suggested by ChatGPT because of the deprecation of the code below it.
-		vim.diagnostic.config({
-			signs = {
-				text = {
-					[vim.diagnostic.severity.ERROR] = " ",
-					[vim.diagnostic.severity.WARN] = " ",
-					[vim.diagnostic.severity.HINT] = "󰠠 ",
-					[vim.diagnostic.severity.INFO] = " ",
-				},
-			},
-		})
-
-		-- local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		-- for type, icon in pairs(signs) do
-		-- 	local hl = "DiagnosticSign" .. type
-		-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		-- end
-
-		-- Key mappings for LSP
+		-- Keymaps for all LSPs
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
@@ -80,87 +67,81 @@ return {
 			end,
 		})
 
-		-- Configure Mason LSP setup with new handlers table
-		mason_lspconfig.setup({
+		-- Disable hover from Ruff to prefer Pyright
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
+			callback = function(args)
+				local client = vim.lsp.get_client_by_id(args.data.client_id)
+				if client and client.name == "ruff" then
+					client.server_capabilities.hoverProvider = false
+				end
+			end,
+			desc = "LSP: Disable hover capability from Ruff",
+		})
+
+		-- Mason LSP auto-install
+		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"pyright",
+				"ruff",
 				"html",
 				"emmet_ls",
 				"ts_ls",
 				"lua_ls",
 			},
-			handlers = {
-				function(server_name)
-					lspconfig[server_name].setup({
-						capabilities = capabilities,
-					})
-				end,
+		})
 
-				pyright = function()
-					lspconfig["pyright"].setup({
-						capabilities = capabilities,
-						settings = {
-							python = {
-								analysis = {
-									autoSearchPaths = true,
-									useLibraryCodeForTypes = true,
-									diagnosticMode = "workspace",
-								},
-							},
-						},
-					})
-				end,
+		-- Capabilities for completion
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-				emmet_ls = function()
-					lspconfig["emmet_ls"].setup({
-						capabilities = capabilities,
-						filetypes = {
-							"html",
-							"typescriptreact",
-							"javascriptreact",
-							"css",
-							"sass",
-							"scss",
-							"less",
-							"svelte",
-						},
-					})
-				end,
+		-- Language servers
+		vim.lsp.enable("pyright", {
+			capabilities = capabilities,
+			settings = {
+				pyright = {
+					disableOrganizeImports = true,
+				},
+				python = {
+					analysis = {
+						typeCheckingMode = "basic",
+						autoImportCompletions = true,
+						autoSearchPaths = true,
+						diagnosticMode = "workspace",
+						useLibraryCodeForTypes = true,
+					},
+				},
+			},
+		})
 
-				html = function()
-					lspconfig["html"].setup({
-						capabilities = capabilities,
-						settings = {
-							html = {
-								validate = { styles = true, scripts = true },
-							},
-						},
-					})
-				end,
+		vim.lsp.enable("ruff", {
+			capabilities = capabilities,
+			init_options = {
+				settings = {
+					args = {},
+				},
+			},
+		})
 
-				tsserver = function()
-					lspconfig["tsserver"].setup({
-						capabilities = capabilities,
-					})
-				end,
+		vim.lsp.enable("html", {
+			capabilities = capabilities,
+		})
 
-				ruff = function() end,
+		vim.lsp.enable("emmet_ls", {
+			capabilities = capabilities,
+		})
 
-				lua_ls = function()
-					lspconfig["lua_ls"].setup({
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								diagnostics = {
-									globals = { "vim" },
-								},
-								completion = {
-									callSnippet = "Replace",
-								},
-							},
-						},
-					})
-				end,
+		vim.lsp.enable("ts_ls", {
+			capabilities = capabilities,
+		})
+
+		vim.lsp.enable("lua_ls", {
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
 			},
 		})
 	end,
