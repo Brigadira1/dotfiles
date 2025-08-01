@@ -103,6 +103,7 @@ return {
 				},
 				python = {
 					analysis = {
+						ignore = { "*" },
 						typeCheckingMode = "basic",
 						autoImportCompletions = true,
 						autoSearchPaths = true,
