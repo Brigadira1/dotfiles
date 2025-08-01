@@ -19,6 +19,7 @@ return {
 			end,
 		})
 		local isLspDiagnosticsVisible = true
+
 		vim.keymap.set("n", "<leader>lx", function()
 			isLspDiagnosticsVisible = not isLspDiagnosticsVisible
 			vim.diagnostic.config({
@@ -26,6 +27,7 @@ return {
 				underline = isLspDiagnosticsVisible,
 			})
 		end, { desc = "Hide linting for the current file" })
+
 		vim.keymap.set("n", "<leader>l", function()
 			lint.try_lint()
 		end, { desc = "Trigger linting for current file" })
