@@ -180,8 +180,8 @@ group_names = [
 # group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 group_labels = [
     "",
-    "󰖟",
-    "",
+    "",
+    "",
     "󰙯",
     "",
     "",
@@ -331,7 +331,7 @@ keys.extend(
 
 
 def init_widgets_defaults():
-    return dict(font="Hack Nerd, Hack Nerd Font, Symbols Nerd Font, Hack Nerd Font Mono, Symbols Nerd Font Mono", fontsize=12, padding=2, background=colors[1])
+    return dict(font="Hack Nerd", fontsize=12, padding=2, background=colors[1])
 
 
 widget_defaults = init_widgets_defaults()
@@ -341,7 +341,7 @@ def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
         widget.GroupBox(
-            font="Hack Nerd, Hack Nerd Font, Symbols Nerd Font, Hack Nerd Font Mono, Symbols Nerd Font Mono",
+            font="Hack Nerd Font Mono",
             fontsize=20,
             margin_y=-1,
             margin_x=0,
@@ -359,17 +359,17 @@ def init_widgets_list():
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.CurrentLayout(
-            font="Hack Nerd Font", fontsize=15, foreground=colors[5], background=colors[1]
+            font="Hack Nerd", fontsize=15, foreground=colors[5], background=colors[1]
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.WindowName(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             fontsize=17,
             foreground=colors[5],
             background=colors[1],
         ),
         widget.Net(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             fontsize=17,
             interface="enp6s18",
             foreground=colors[2],
@@ -378,7 +378,7 @@ def init_widgets_list():
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.TextBox(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             text="  ",
             foreground=colors[4],
             background=colors[1],
@@ -389,7 +389,7 @@ def init_widgets_list():
             name="keyboardlayout",
             configured_keyboards=["us", "bg(phonetic)"],
             display_map={"us": "US", "bg(phonetic)": "BG"},
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             fontsize=17,
             foreground=colors[5],
             background=colors[1],
@@ -397,7 +397,7 @@ def init_widgets_list():
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.TextBox(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             text="  ",
             foreground=colors[6],
             background=colors[1],
@@ -405,7 +405,7 @@ def init_widgets_list():
             fontsize=16,
         ),
         widget.CPU(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             fontsize=17,
             update_interval=1.0,
             format="{load_percent}%",
@@ -414,7 +414,7 @@ def init_widgets_list():
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.TextBox(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             text="  ",
             foreground=colors[4],
             background=colors[1],
@@ -422,7 +422,7 @@ def init_widgets_list():
             fontsize=16,
         ),
         widget.Memory(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             fontsize=17,
             format="{MemUsed: .2f}{mm} /{MemTotal: .2f}{mm}",
             measure_mem="G",
@@ -432,7 +432,7 @@ def init_widgets_list():
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.TextBox(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             text=" 󰋊",
             foreground=colors[7],
             background=colors[1],
@@ -443,13 +443,13 @@ def init_widgets_list():
             padding=10,
             background=colors[1],
             visible_on_warn=False,
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             fontsize=15,
             format="{uf}{m} ({r:.0f}%)",
         ),
         widget.Sep(linewidth=1, padding=10, foreground=colors[2], background=colors[1]),
         widget.TextBox(
-            font="Hack Nerd Font",
+            font="Hack Nerd",
             text="  ",
             foreground=colors[3],
             background=colors[1],
