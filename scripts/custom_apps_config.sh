@@ -60,6 +60,8 @@ handle_lightdm_greeters() {
     replace_line_in_file "^[[:space:]]*logo_image:[[:space:]].*" "    logo_image: /usr/share/web-greeter/themes/shikai/assets/media/logos/" "$web_greeter_conf"
     replace_line_in_file "^[[:space:]]*theme:[[:space:]].*" "    theme: shikai" "$web_greeter_conf"
 
+    echo "Copying avatar picture from '$HOME/dotfiles/pics/ghibli_2.png' to '~/.face'"
+    sudo cp -f "$HOME/dotfiles/pics/ghibli_2.png" "$HOME/.face"
 }
 
 removing_grub_delay() {
