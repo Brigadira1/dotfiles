@@ -1,5 +1,3 @@
-#   ___ _____ ___ _     _____    ____             __ _
-#  / _ \_   _|_ _| |   | ____|  / ___|___  _ __  / _(_) __ _
 # | | | || |  | || |   |  _|   | |   / _ \| '_ \| |_| |/ _` |
 # | |_| || |  | || |___| |___  | |__| (_) | | | |  _| | (_| |
 #  \__\_\|_| |___|_____|_____|  \____\___/|_| |_|_| |_|\__, |
@@ -289,7 +287,7 @@ layouts = [
 
 groups.append(
     ScratchPad(
-        "6",
+        "scratchpad",
         [
             DropDown(
                 "chatgpt",
@@ -302,7 +300,7 @@ groups.append(
             ),
             DropDown(
                 "terminal",
-                "alacritty",
+                "kitty",
                 x=0.3,
                 y=0.1,
                 width=0.40,
@@ -314,7 +312,7 @@ groups.append(
 )
 keys.extend(
     [
-        Key([mod], "c", lazy.group["6"].dropdown_toggle("chatgpt")),
+        Key([mod], "c", lazy.group["scratchpad"].dropdown_toggle("chatgpt")),
     ]
 )
 # layouts = [
