@@ -21,7 +21,9 @@ flameshot = "flameshot gui"
 myTerminal = "kitty"
 myFileManager = "yazi"
 myRun = "rofi"
-obsidian = "obsidian"
+
+# Obsidian don't need to be spawned directly as it is always opened in my tmux session
+# obsidian = "obsidian"
 
 # With this command line, rofi will show only the applications installed.
 rofi_command = f"{myRun} -show drun"
@@ -116,7 +118,10 @@ keys = [
         desc="Yazi file manager",
     ),
     Key([mod], "s", lazy.spawn(flameshot), desc="Screenshot Utility (flameshot)"),
-    Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
+
+    # Obsidian is removed as it is part of the tmux sessions and is always opened
+    # Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
+
     Key(
         [mod],
         "space",
