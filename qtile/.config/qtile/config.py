@@ -21,7 +21,7 @@ mod2 = "control"
 myBrowser = "brave"
 flameshot = "flameshot gui"
 myTerminal = "kitty"
-myFileManager = "vifm"
+myFileManager = "yazi"
 myRun = "rofi"
 obsidian = "obsidian"
 
@@ -101,14 +101,21 @@ keys = [
     ),
     Key([mod], "z", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod], "b", lazy.spawn(myBrowser), desc="Brave web browser"),
+    # Key(
+    #     [mod],
+    #     "m",
+    #     lazy.spawn(
+    #         f"{myTerminal} -e bash -c '~/.config/vifm/scripts/vifmrun .; exec bash'",
+    #         shell=True,
+    #     ),
+    #     desc="VIFM file manager",
+    # ),
+
     Key(
         [mod],
         "m",
-        lazy.spawn(
-            f"{myTerminal} -e bash -c '~/.config/vifm/scripts/vifmrun .; exec bash'",
-            shell=True,
-        ),
-        desc="VIFM file manager",
+        lazy.spawn(f"{myTerminal} -e {myFileManager}"),
+        desc="Yazi file manager",
     ),
     Key([mod], "s", lazy.spawn(flameshot), desc="Screenshot Utility (flameshot)"),
     Key([mod], "o", lazy.spawn(obsidian), desc="Obsidian"),
