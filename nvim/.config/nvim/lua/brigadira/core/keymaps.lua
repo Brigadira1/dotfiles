@@ -28,8 +28,8 @@ keymap.set("i", "<C-A>", "<C-o>^", opts)
 keymap.set("i", "<C-H>", "<C-W>", { noremap = true, silent = true })
 
 -- windows management
-keymap.set("n", "<leader>s-", "<C-w>v", { desc = "Split window vertically" }) -- split windows vertically
-keymap.set("n", "<leader>s|", "<C-w>s", { desc = "Split window horizontally" }) -- split windows horizontally
+keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split window vertically" }) -- split windows vertically
+keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split window horizontally" }) -- split windows horizontally
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- split windows equal size
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 keymap.set("n", "<leader>sj", "<C-w>-", { desc = "Make spllit window height shorter" }) -- make split window height shorter
