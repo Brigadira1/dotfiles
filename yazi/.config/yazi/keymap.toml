@@ -373,7 +373,12 @@ keymap = [
 	{ on = "f", run = "filter", desc = "Filter help items" },
 ]
 
-[[manager.prepend_keymap]]
+# [[manager.prepend_keymap]]
+# on   = "!"
+# run  = 'shell "$SHELL" --block'
+# desc = "Open shell here"
+
+[[mgr.prepend_keymap]]
 on   = "!"
 run  = 'shell "$SHELL" --block'
 desc = "Open shell here"
