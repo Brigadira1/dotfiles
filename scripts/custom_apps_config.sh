@@ -34,31 +34,19 @@ handle_qt5ct_env() {
 handle_lightdm_greeters() {
 
     local lightdm_conf="/etc/lightdm/lightdm.conf"
-    local web_greeter_conf="/etc/lightdm/web-greeter.yml"
-    local nvidia_meta_mode_script="/home/brigadira/dotfiles/X11/gpu-accelerated/nvidia_metamode.sh"
 
     echo "Checking to see whether lightdm display manager is installed on the system..."
     if ! sudo pacman -Qi lightdm &>/dev/null; then
         echo "Lightdm is not installed on the system. Skipping...."
         return 1
     fi
-    echo "Lightdm is installed on the system. Web greeter and web-greeter-theme-shikai theme will be configured"
+    echo "Lightdm is installed on the system. Slick-greeter will be configured"
     if [ ! -f "$lightdm_conf" ]; then
         echo "$lightdm_conf doesn't exist. Exiting..."
         return 1
     fi
-    echo "Setting up web-greeter to be the default lightdm greeter..."
-    replace_line_in_file "#greeter-session=.*" "greeter-session=web-greeter" "$lightdm_conf"
-    replace_line_in_file "#display-setup-script=.*" "display-setup-script=$nvidia_meta_mode_script" "$lightdm_conf"
-
-    if [ ! -f "$web_greeter_conf" ]; then
-        echo "$web_greeter_conf doesn't exist. Exiting...."
-        return 1
-    fi
-    echo "Setting up web-greeter shikai theme to be used..."
-    replace_line_in_file "^[[:space:]]*background_images_dir:[[:space:]].*" "    background_images_dir: /usr/share/web-greeter/themes/shikai/assets/media/wallpapers/" "$web_greeter_conf"
-    replace_line_in_file "^[[:space:]]*logo_image:[[:space:]].*" "    logo_image: /usr/share/web-greeter/themes/shikai/assets/media/logos/" "$web_greeter_conf"
-    replace_line_in_file "^[[:space:]]*theme:[[:space:]].*" "    theme: shikai" "$web_greeter_conf"
+    echo "Setting up slick-greeter to be the default lightdm greeter..."
+    replace_line_in_file "#greeter-session=.*" "greeter-session=lightdm-slick-greeter" "$lightdm_conf"
 
     echo "Copying avatar picture from '$HOME/dotfiles/pics/ghibli_2.png' to '~/.face'"
     sudo cp -f "$HOME/dotfiles/pics/ghibli_2.png" "$HOME/.face"
