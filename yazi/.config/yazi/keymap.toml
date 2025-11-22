@@ -383,16 +383,6 @@ on   = "!"
 run  = 'shell "$SHELL" --block'
 desc = "Open shell here"
 
-[[mgr.prepend_keymap]]
-on   = [ "a", "m" ]
-run  = "plugin archivemount mount"
-desc = "Mount selected archive"
-
-[[mgr.prepend_keymap]]
-on   = [ "a", "u" ]
-run  = "plugin archivemount unmount"
-desc = "Unmount and save changes to original archive"
-
 # If your yazi version is lower than v25.5.28, repleace "mgr" by "manager".
 [[mgr.prepend_keymap]]
 on = [ "m" ]

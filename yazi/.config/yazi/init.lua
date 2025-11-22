@@ -1,4 +1,4 @@
-require("archivemount"):setup()
+-- require("archivemount"):setup()
 
 -- ~/.config/yazi/init.lua
 require("bookmarks"):setup({
