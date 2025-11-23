@@ -384,6 +384,11 @@ on   = "!"
 run  = 'shell "$SHELL" --block'
 desc = "Open shell here"
 
+[[mgr.prepend_keymap]]
+on = [ ".", "s" ]
+run  = "plugin what-size"
+desc = "Calc size of selection or cwd" 
+
 # If your yazi version is lower than v25.5.28, repleace "mgr" by "manager".
 [[mgr.prepend_keymap]]
 on = [ "b", "m" ]
