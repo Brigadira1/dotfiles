@@ -119,7 +119,7 @@ keymap = [
         "m",
         "n",
     ], run = "linemode none", desc = "Linemode: none" },
-
+	{ on = [ "m", "d" ], run = "linemode size_and_mtime", desc = "Linemode: size+mtime (custom)" },
     # Copy
     { on = [
         "c",
@@ -533,7 +533,7 @@ desc = "Open shell here"
 
 # If your yazi version is lower than v25.5.28, repleace "mgr" by "manager".
 [[mgr.prepend_keymap]]
-on = ["m"]
+on = [ "b", "m"]
 run = "plugin bookmarks save"
 desc = "Save current position as a bookmark"
 
