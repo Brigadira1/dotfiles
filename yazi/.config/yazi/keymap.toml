@@ -385,12 +385,12 @@ run  = 'shell "$SHELL" --block'
 desc = "Open shell here"
 
 [[mgr.prepend_keymap]]
-on   = [ "a", "m" ]
+on   = [ "A", "m" ]
 run  = "plugin archivemount mount"
 desc = "Mount selected archive"
 
 [[mgr.prepend_keymap]]
-on   = [ "a", "u" ]
+on   = [ "A", "u" ]
 run  = "plugin archivemount unmount"
 desc = "Unmount and save changes to original archive"
 
