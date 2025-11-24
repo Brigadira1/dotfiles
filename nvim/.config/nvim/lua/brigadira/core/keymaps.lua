@@ -78,6 +78,7 @@ keymap.set("n", "<leader>zt", "<cmd>ObsidianTags<cr>", { desc = "Fuzzy finding t
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Shows current opened buffers" })
+keymap.set("n", "<leader>fg", "<cmd>Telescope registers<cr>", { desc = "Shows current opened registers" })
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Searches in Neovim help" })
 keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
