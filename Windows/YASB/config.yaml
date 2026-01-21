@@ -40,7 +40,8 @@ bars:
     widgets:
       left: ["glazewm_tiling_direction", "glazewm_workspaces", "active_window"]
       center: ["clock"]
-      right: ["media", "volume", "cpu", "memory", "wallpapers", "power_menu"]
+      right:
+        ["media", "volume", "disk", "cpu", "memory", "wallpapers", "power_menu"]
 widgets:
   home:
     type: "yasb.home.HomeWidget"
@@ -53,7 +54,32 @@ widgets:
         - { title: "Cursed Memories", path: "~\\Pictures" }
       system_menu: true
       power_menu: true
-      blur: false
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+      label: "<span>\uf0a0</span> {space[used][percent]}"
+      label_alt: "C: {space[used][gb]} / {space[total][gb]}"
+      volume_label: "C"
+      update_interval: 60
+      group_label:
+        volume_labels: ["C", "D"]
+        show_label_name: true
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_group"
+        on_middle: "toggle_label"
+        on_right: "do_nothing"
+      disk_thresholds:
+        low: 25
+        medium: 50
+        high: 90
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -92,8 +118,8 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%I:%M:%S}"
-      label_alt: "{%I:%M:%S}"
+      label: "{%H:%M:%S}"
+      label_alt: "{%d.%m.%Y %H:%M}"
       timezones: []
       callbacks:
         on_left: "toggle_calendar"
