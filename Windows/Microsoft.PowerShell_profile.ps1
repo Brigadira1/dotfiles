@@ -20,3 +20,4 @@ Invoke-Expression (& { (zoxide init powershell --cmd cd | Out-String) })
 $Env:KOMOREBI_CONFIG_HOME = 'C:\Users\iavor\.config\komorebi'
 $env:WHKD_CONFIG_HOME = 'C:\Users\iavor\.config\komorebi'
 Invoke-Expression (&starship init powershell)
+Import-Module Terminal-Icons
