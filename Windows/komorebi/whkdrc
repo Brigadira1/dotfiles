@@ -76,7 +76,7 @@ alt + m : wt cmd /c yazi
 alt + s : start ms-screenclip:
 
 # Launch Terminal with Fastfetch (Force Tiling via cmd wrapper)
-alt + return : wt -- cmd /k fastfetch
+alt + return : wt -- cmd /c "fastfetch & powershell"
 
 # PowerToys Run - Method 1: Direct launch
 alt + r : "C:\Users\iavor\scoop\apps\powertoys\current\PowerToys.PowerLauncher.exe"
