@@ -1,0 +1,137 @@
+.shell powershell
+
+# ============================================================
+# SYSTEM / WM CONTROL
+# ============================================================
+
+# Reload whkd configuration
+alt + o : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden
+
+# Reload komorebi configuration
+alt + ctrl + r : komorebic reload-configuration
+
+# Quit komorebi
+alt + ctrl + q : komorebic stop
+
+# ============================================================
+# WINDOW FOCUS (VIM-STYLE)
+# ============================================================
+
+alt + h : komorebic focus left
+alt + j : komorebic focus down
+alt + k : komorebic focus up
+alt + l : komorebic focus right
+alt + n : komorebic cycle-focus next
+
+# ============================================================
+# WINDOW MOVEMENT (VIM-STYLE)
+# ============================================================
+
+alt + shift + h : komorebic move left
+alt + shift + j : komorebic move down
+alt + shift + k : komorebic move up
+alt + shift + l : komorebic move right
+
+# ============================================================
+# WINDOW RESIZING
+# ============================================================
+
+alt + oem_plus : komorebic resize-axis horizontal increase
+alt + oem_minus : komorebic resize-axis horizontal decrease
+alt + ctrl + h : komorebic resize-axis vertical increase
+alt + ctrl + l : komorebic resize-axis vertical decrease
+alt + ctrl + k : komorebic resize-axis horizontal increase
+alt + ctrl + j : komorebic resize-axis horizontal decrease
+
+# ============================================================
+# WINDOW MANAGEMENT
+# ============================================================
+
+alt + w : komorebic close
+alt + f : komorebic toggle-monocle
+alt + t : komorebic toggle-float
+alt + shift + return : komorebic toggle-maximize
+alt + z : komorebic adjust-container-padding 0 20; komorebic adjust-workspace-padding 0 20
+
+# ============================================================
+# LAYOUT MANAGEMENT
+# ============================================================
+
+alt + oem_1 : komorebic cycle-layout next
+alt + shift + oem_1 : komorebic cycle-layout previous
+alt + x : komorebic flip-layout horizontal
+alt + y : komorebic flip-layout vertical
+
+# ============================================================
+# APPLICATION LAUNCHING
+# ============================================================
+
+# Launch web browser (Brave)
+alt + b : start brave.exe
+
+# Launch Yazi file manager in terminal with 'y' command
+alt + m : wt cmd /c yazi
+
+# Screenshot utility (Windows Snipping Tool)
+alt + s : start ms-screenclip:
+
+# Launch terminal
+alt + return : wt
+
+# PowerToys Run - Method 1: Direct launch
+alt + r : "C:\Users\iavor\scoop\apps\powertoys\current\PowerToys.PowerLauncher.exe"
+
+# ============================================================
+# WORKSPACE SWITCHING (1-7 matching your komorebi.json)
+# ============================================================
+
+alt + 1 : komorebic focus-workspace 0
+alt + 2 : komorebic focus-workspace 1
+alt + 3 : komorebic focus-workspace 2
+alt + 4 : komorebic focus-workspace 3
+alt + 5 : komorebic focus-workspace 4
+alt + 6 : komorebic focus-workspace 5
+alt + 7 : komorebic focus-workspace 6
+alt + 8 : komorebic focus-workspace 7
+alt + 9 : komorebic focus-workspace 8
+alt + 0 : komorebic focus-workspace 9
+
+# Next/Previous workspace
+alt + oem_7 : komorebic cycle-workspace next
+alt + shift + tab : komorebic cycle-workspace previous
+
+# ============================================================
+# MOVE WINDOW TO WORKSPACE (AND FOLLOW)
+# ============================================================
+
+alt + shift + 1 : komorebic move-to-workspace 0; komorebic focus-workspace 0
+alt + shift + 2 : komorebic move-to-workspace 1; komorebic focus-workspace 1
+alt + shift + 3 : komorebic move-to-workspace 2; komorebic focus-workspace 2
+alt + shift + 4 : komorebic move-to-workspace 3; komorebic focus-workspace 3
+alt + shift + 5 : komorebic move-to-workspace 4; komorebic focus-workspace 4
+alt + shift + 6 : komorebic move-to-workspace 5; komorebic focus-workspace 5
+alt + shift + 7 : komorebic move-to-workspace 6; komorebic focus-workspace 6
+alt + shift + 8 : komorebic move-to-workspace 7; komorebic focus-workspace 7
+alt + shift + 9 : komorebic move-to-workspace 8; komorebic focus-workspace 8
+alt + shift + 0 : komorebic move-to-workspace 9; komorebic focus-workspace 9
+
+# ============================================================
+# ADDITIONAL USEFUL SHORTCUTS
+# ============================================================
+
+alt + p : komorebic toggle-pause
+alt + shift + r : komorebic retile
+alt + oem_4 : komorebic cycle-stack previous
+alt + oem_6 : komorebic cycle-stack next
+
+
+
+
+
+
+
+
+
+
+
+
