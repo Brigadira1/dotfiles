@@ -75,8 +75,8 @@ alt + m : wt cmd /c yazi
 # Screenshot utility (Windows Snipping Tool)
 alt + s : start ms-screenclip:
 
-# Launch terminal
-alt + return : wt
+# Launch Terminal with Fastfetch (Force Tiling via cmd wrapper)
+alt + return : wt -- cmd /k fastfetch
 
 # PowerToys Run - Method 1: Direct launch
 alt + r : "C:\Users\iavor\scoop\apps\powertoys\current\PowerToys.PowerLauncher.exe"
