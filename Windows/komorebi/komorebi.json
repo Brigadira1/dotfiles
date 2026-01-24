@@ -52,7 +52,7 @@
   "monitors": [
     {
       "workspaces": [
-        { "name": "I", "layout": "BSP" },
+        { "name": "I", "layout": "VerticalStack" },
         { "name": "II", "layout": "VerticalStack" },
         { "name": "III", "layout": "HorizontalStack" },
         { "name": "IV", "layout": "UltrawideVerticalStack" },
