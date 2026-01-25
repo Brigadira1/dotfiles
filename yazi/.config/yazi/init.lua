@@ -1,5 +1,7 @@
 -- require("archivemount"):setup()
-
+require("zoxide"):setup({
+	update_db = true,
+})
 -- ~/.config/yazi/init.lua
 require("bookmarks"):setup({
 	last_directory = { enable = false, persist = false, mode = "dir" },
