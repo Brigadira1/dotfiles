@@ -177,6 +177,25 @@ keymap.set("n", "<leader>d?", function()
 	widgets.centered_float(widgets.scopes)
 end, { desc = "Debug Scopes" }) -- Show scopes in floating window
 
+-- Print current file (cross-platform)
+keymap.set("n", "<leader>pp", function()
+	local file = vim.fn.expand("%:p")
+
+	if vim.fn.has("win32") == 1 then
+		-- Windows: use notepad's silent print
+		vim.fn.system('notepad /p "' .. file .. '"')
+	else
+		-- Linux (Arch): use lpr
+		vim.fn.system("lpr " .. vim.fn.shellescape(file))
+	end
+
+	local exit_code = vim.v.shell_error
+	if exit_code == 0 then
+		vim.notify("Sent to printer: " .. vim.fn.expand("%:t"), vim.log.levels.INFO)
+	else
+		vim.notify("Print failed (exit code: " .. exit_code .. ")", vim.log.levels.ERROR)
+	end
+end, { desc = "Print current file" })
 -- -- Debugging
 -- keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
 -- keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
