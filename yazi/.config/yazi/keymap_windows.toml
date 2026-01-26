@@ -531,23 +531,28 @@ on = "!"
 run = 'shell --block "powershell.exe"'
 desc = "Open shell here"
 
-# If your yazi version is lower than v25.5.28, repleace "mgr" by "manager".
+# Plugin for permanent yazi bookmarks. The code of the plugin is here: https://gitee.com/DreamMaoMao/bookmarks.yazi
 [[mgr.prepend_keymap]]
-on = [ "b", "m"]
-run = "plugin bookmarks save"
+on = [ "u", "a" ]
+run = "plugin bookmarks -- save"
 desc = "Save current position as a bookmark"
 
 [[mgr.prepend_keymap]]
-on = ["'"]
-run = "plugin bookmarks jump"
+on = [ "u", "g" ]
+run = "plugin bookmarks -- jump"
 desc = "Jump to a bookmark"
 
 [[mgr.prepend_keymap]]
-on = ["b", "d"]
-run = "plugin bookmarks delete"
+on = [ "u", "d" ]
+run = "plugin bookmarks -- delete"
 desc = "Delete a bookmark"
 
 [[mgr.prepend_keymap]]
-on = ["b", "D"]
-run = "plugin bookmarks delete_all"
+on = [ "u", "D" ]
+run = "plugin bookmarks -- delete_all"
 desc = "Delete all bookmarks"
+
+[[mgr.prepend_keymap]]
+on = [ "u", "m" ]
+run = "plugin bookmarks -- modify"
+desc = "modify key bind to hoverd path"
