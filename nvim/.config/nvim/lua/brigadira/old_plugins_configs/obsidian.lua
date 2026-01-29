@@ -1,5 +1,5 @@
 return {
-	"obsidian-nvim/obsidian.nvim",
+	"epwalsh/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
 	-- lazy = true,
 	-- ft = "markdown",
@@ -11,7 +11,6 @@ return {
 
 	opts = {
 		ui = { enable = false },
-		legacy_commands = false, -- recommended by community fork to set this to false
 		workspaces = {
 			{
 				name = "Obsidian",
