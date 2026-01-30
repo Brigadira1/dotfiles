@@ -14,10 +14,17 @@ return {
 		legacy_commands = false, -- recommended by community fork to set this to false
 		workspaces = {
 			{
-				name = "Obsidian",
+				name = "Personal",
 				path = "~/Obsidian/",
 				overrides = {
 					notes_subdir = "0. Inbox",
+				},
+			},
+			{
+				name = "SAP",
+				path = "C:/Users/I024158/OneDrive - SAP SE/SAP Obisidan Vault", -- Change this path to your second vault location
+				overrides = {
+					notes_subdir = "0. Inbox", -- Adjust subdirectory as needed
 				},
 			},
 		},
