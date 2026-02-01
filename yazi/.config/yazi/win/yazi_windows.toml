@@ -31,22 +31,27 @@ image_quality = 75
 ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
-[opener]
 # --- FIX: Using 'explorer' instead of 'start' handles spaces in paths correctly ---
+# open = [
+# 	{ run = 'cmd /c start', orphan = true, desc = "Open", for = "windows" },
+# ]
+
+[opener]
+# Open files with default Windows application
 open = [
-    { run = 'explorer "%1"', orphan = true, desc = "Open", for = "windows" },
+    { run = 'powershell -NoProfile -Command "Start-Process -FilePath \"%*\""', orphan = true, desc = "Open", for = "windows" },
 ]
-# Neovim (Yazi handles quoting for %*)
+# Neovim
 edit = [
     { run = 'nvim %*', block = true, desc = "Edit with Neovim", for = "windows" },
 ]
 # Reveal in Explorer
 reveal = [
-    { run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
+    { run = 'explorer /select,"%*"', orphan = true, desc = "Reveal", for = "windows" },
 ]
 # Extract
 extract = [
-    { run = 'ya pub extract --list "%1"', desc = "Extract here", for = "windows" },
+    { run = 'ya pub extract --list "%*"', desc = "Extract here", for = "windows" },
 ]
 
 [open]
@@ -110,6 +115,7 @@ rules = [
         "edit",
         "reveal",
     ] },
+
     { url = "*.css", use = [
         "edit",
         "reveal",
