@@ -119,7 +119,10 @@ keymap = [
         "m",
         "n",
     ], run = "linemode none", desc = "Linemode: none" },
-	{ on = [ "m", "d" ], run = "linemode size_and_mtime", desc = "Linemode: size+mtime (custom)" },
+    { on = [
+        "m",
+        "d",
+    ], run = "linemode size_and_mtime", desc = "Linemode: size+mtime (custom)" },
     # Copy
     { on = [
         "c",
@@ -527,32 +530,37 @@ keymap = [
 ]
 
 [[mgr.prepend_keymap]]
+on = "<Enter>"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[mgr.prepend_keymap]]
 on = "!"
 run = 'shell --block "powershell.exe"'
 desc = "Open shell here"
 
 # Plugin for permanent yazi bookmarks. The code of the plugin is here: https://gitee.com/DreamMaoMao/bookmarks.yazi
 [[mgr.prepend_keymap]]
-on = [ "u", "a" ]
+on = ["u", "a"]
 run = "plugin bookmarks -- save"
 desc = "Save current position as a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "g" ]
+on = ["u", "g"]
 run = "plugin bookmarks -- jump"
 desc = "Jump to a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "d" ]
+on = ["u", "d"]
 run = "plugin bookmarks -- delete"
 desc = "Delete a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "D" ]
+on = ["u", "D"]
 run = "plugin bookmarks -- delete_all"
 desc = "Delete all bookmarks"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "m" ]
+on = ["u", "m"]
 run = "plugin bookmarks -- modify"
 desc = "modify key bind to hoverd path"
