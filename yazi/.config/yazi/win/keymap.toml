@@ -229,32 +229,40 @@ keymap = [
     ], run = "cd ~", desc = "Go home" },
     { on = [
         "g",
-        "c",
-    ], run = "cd ~/.config", desc = "Go ~/.config" },
-    { on = [
-        "g",
         "d",
     ], run = "cd ~/Downloads", desc = "Go ~/Downloads" },
     { on = [
         "g",
-        "p",
-    ], run = "cd ~/repos/python_fundamentals", desc = "Go ~/repos/python_fundamentals" },
+        "r",
+    ], run = "cd D:/repos/dotfiles", desc = "Go D:/repos/dotfiles" },
     { on = [
         "g",
         "o",
-    ], run = "cd ~/Obsidian", desc = "Go ~/Obsidian" },
+    ], run = "cd ~/Obsidian", desc = "Go to Personal Obsidian Vault" },
     { on = [
         "g",
-        "D",
-    ], run = "cd ~/dotfiles", desc = "Go ~/dotfiles" },
+        "O",
+    ], run = 'cd "C:/Users/I024158/OneDrive - SAP SE/SAP Obsidian Vault"', desc = "Go to SAP Obsidian Vault" },
     { on = [
         "g",
         "s",
-    ], run = "cd /mnt/synology", desc = "Go Synology NAS" },
+    ], run = "cd ", desc = "Go Synology NAS, Brigadira folder" },
     { on = [
         "g",
-        "r",
-    ], run = "cd /", desc = "Go root of the file system" },
+        "n",
+    ], run = "cd C:/Users/I024158/AppData/Local/nvim/lua/brigadira", desc = "Go to Neovim PC config" },
+    { on = [
+        "g",
+        "N",
+    ], run = "cd D:/repos/dotfiles/nvim/.config/nvim/lua/brigadira", desc = "Go to Neovim dotfiles config" },
+    { on = [
+        "g",
+        "y",
+    ], run = "cd C:/Users/I024158/AppData/Roaming/yazi/config", desc = "Go to Yazi PC config" },
+    { on = [
+        "g",
+        "Y",
+    ], run = "cd D:/repos/dotfiles/yazi/.config/yazi", desc = "Go to Yazi dotfiles config" },
     { on = [
         "g",
         "<Space>",
