@@ -22,7 +22,7 @@ return {
 			},
 			{
 				name = "SAP",
-				path = "C:/Users/I024158/OneDrive - SAP SE/SAP Obisidan Vault", -- Change this path to your second vault location
+				path = "C:/Users/I024158/OneDrive - SAP SE/SAP Obsidian Vault", -- Change this path to your second vault location
 				overrides = {
 					notes_subdir = "0. Inbox", -- Adjust subdirectory as needed
 				},
