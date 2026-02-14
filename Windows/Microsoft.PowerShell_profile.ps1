@@ -43,28 +43,18 @@ if (-not (Test-Path $starshipCache)) {
 . $starshipCache
 
 # ----------------------------------------------------------------
-# 5. Terminal Icons
-# Loaded last so the prompt and navigation tools are ready first
+# 5. Eza (Fast Rust replacement for ls)
+# Completely bypasses PowerShell formatting for instant, colored output
 # ----------------------------------------------------------------
-# ----------------------------------------------------------------
-# 5. Lazy-Load Terminal Icons
-# Delays loading the heavy icon module until you actually use 'ls' or 'dir'
-# This makes the terminal startup instant.
-# ----------------------------------------------------------------
-function Load-Icons-And-List {
-    param($Args)
-    
-    # Check if the module is already loaded to avoid reloading
-    if (-not (Get-Module -Name Terminal-Icons)) {
-        Write-Host " ...Loading Icons..." -ForegroundColor DarkGray -NoNewline
-        Import-Module -Name Terminal-Icons
-        Write-Host " Done." -ForegroundColor DarkGray
-    }
 
-    # Run the actual directory listing
-    Get-ChildItem @Args
-}
+# First, remove PowerShell's default 'ls' and 'dir' aliases so they don't conflict
+Remove-Item Alias:ls -Force -ErrorAction SilentlyContinue
+Remove-Item Alias:dir -Force -ErrorAction SilentlyContinue
 
-# Overwrite the standard 'ls' and 'dir' aliases to use our lazy loader
-Set-Alias -Name ls -Value Load-Icons-And-List -Scope Global -Option AllScope
-Set-Alias -Name dir -Value Load-Icons-And-List -Scope Global -Option AllScope
+# Map standard commands to eza, passing through any extra flags (like -la) via $args
+function ls { eza --icons $args }
+function ll { eza -l --icons $args }
+function la { eza -a --icons $args }
+function lla { eza -la --icons $args }
+# Optional: Map 'dir' to eza as well, just in case you accidentally type it
+function dir { eza --icons $args }
