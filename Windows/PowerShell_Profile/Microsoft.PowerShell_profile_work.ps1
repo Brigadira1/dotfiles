@@ -58,3 +58,4 @@ function la { eza -a --icons $args }
 function lla { eza -la --icons $args }
 # Optional: Map 'dir' to eza as well, just in case you accidentally type it
 function dir { eza --icons $args }
+fastfetch
