@@ -119,7 +119,10 @@ keymap = [
         "m",
         "n",
     ], run = "linemode none", desc = "Linemode: none" },
-	{ on = [ "m", "d" ], run = "linemode size_and_mtime", desc = "Linemode: size+mtime (custom)" },
+    { on = [
+        "m",
+        "d",
+    ], run = "linemode size_and_mtime", desc = "Linemode: size+mtime (custom)" },
     # Copy
     { on = [
         "c",
@@ -226,32 +229,40 @@ keymap = [
     ], run = "cd ~", desc = "Go home" },
     { on = [
         "g",
-        "c",
-    ], run = "cd ~/.config", desc = "Go ~/.config" },
-    { on = [
-        "g",
         "d",
     ], run = "cd ~/Downloads", desc = "Go ~/Downloads" },
     { on = [
         "g",
-        "p",
-    ], run = "cd ~/repos/python_fundamentals", desc = "Go ~/repos/python_fundamentals" },
+        "r",
+    ], run = "cd D:/repos/dotfiles", desc = "Go D:/repos/dotfiles" },
     { on = [
         "g",
         "o",
-    ], run = "cd ~/Obsidian", desc = "Go ~/Obsidian" },
+    ], run = "cd ~/Obsidian", desc = "Go to Personal Obsidian Vault" },
     { on = [
         "g",
-        "D",
-    ], run = "cd ~/dotfiles", desc = "Go ~/dotfiles" },
+        "O",
+    ], run = 'cd "C:/Users/I024158/OneDrive - SAP SE/SAP Obsidian Vault"', desc = "Go to SAP Obsidian Vault" },
     { on = [
         "g",
         "s",
-    ], run = "cd /mnt/synology", desc = "Go Synology NAS" },
+    ], run = "cd S:\\", desc = "Go Synology NAS, Brigadira folder" },
     { on = [
         "g",
-        "r",
-    ], run = "cd /", desc = "Go root of the file system" },
+        "n",
+    ], run = "cd C:/Users/I024158/AppData/Local/nvim/lua/brigadira", desc = "Go to Neovim PC config" },
+    { on = [
+        "g",
+        "N",
+    ], run = "cd D:/repos/dotfiles/nvim/.config/nvim/lua/brigadira", desc = "Go to Neovim dotfiles config" },
+    { on = [
+        "g",
+        "y",
+    ], run = "cd C:/Users/iavor/AppData/Roaming/yazi/config", desc = "Go to Yazi PC config" },
+    { on = [
+        "g",
+        "Y",
+    ], run = "cd D:/repos/dotfiles/yazi/.config/yazi", desc = "Go to Yazi dotfiles config" },
     { on = [
         "g",
         "<Space>",
@@ -527,32 +538,37 @@ keymap = [
 ]
 
 [[mgr.prepend_keymap]]
+on = "<Enter>"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[mgr.prepend_keymap]]
 on = "!"
 run = 'shell --block "powershell.exe"'
 desc = "Open shell here"
 
 # Plugin for permanent yazi bookmarks. The code of the plugin is here: https://gitee.com/DreamMaoMao/bookmarks.yazi
 [[mgr.prepend_keymap]]
-on = [ "u", "a" ]
+on = ["u", "a"]
 run = "plugin bookmarks -- save"
 desc = "Save current position as a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "g" ]
+on = ["u", "g"]
 run = "plugin bookmarks -- jump"
 desc = "Jump to a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "d" ]
+on = ["u", "d"]
 run = "plugin bookmarks -- delete"
 desc = "Delete a bookmark"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "D" ]
+on = ["u", "D"]
 run = "plugin bookmarks -- delete_all"
 desc = "Delete all bookmarks"
 
 [[mgr.prepend_keymap]]
-on = [ "u", "m" ]
+on = ["u", "m"]
 run = "plugin bookmarks -- modify"
 desc = "modify key bind to hoverd path"
