@@ -38,6 +38,7 @@ $line_break\
 $character"""
 
 command_timeout = 1000
+scan_timeout = 50  # Increase timeout for directory scanning (default is 30ms)
 # [username]
 # style_user = "green bold"
 # style_root = "red bold"

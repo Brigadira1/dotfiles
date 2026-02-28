@@ -98,3 +98,13 @@ eval "$(starship init bash)"
 set -o vi
 colorscript random
 eval "$(zoxide init bash)"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# WSL: Change to home directory if starting in Windows path
+# This prevents starship timeout warnings when scanning slow Windows filesystems
+case "$PWD" in
+  /mnt/c/*|/mnt/d/*|/mnt/e/*|/mnt/f/*)
+    cd ~ 2>/dev/null
+    ;;
+esac
